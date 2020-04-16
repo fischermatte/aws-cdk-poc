@@ -1,0 +1,8 @@
+# Project exclude paths
+/node_modules/
+/src/create.js
+/src/delete-one.js
+/src/get-all.js
+/src/get-one.js
+/src/update-one.js
+/index.js
