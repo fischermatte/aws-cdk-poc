@@ -8,17 +8,17 @@
         "id": "Tree",
         "path": "Tree"
       },
-      "CdkPoc": {
-        "id": "CdkPoc",
-        "path": "CdkPoc",
+      "cdk-poc-dev": {
+        "id": "cdk-poc-dev",
+        "path": "cdk-poc-dev",
         "children": {
-          "items": {
-            "id": "items",
-            "path": "CdkPoc/items",
+          "cdk-poc-dev-items": {
+            "id": "cdk-poc-dev-items",
+            "path": "cdk-poc-dev/cdk-poc-dev-items",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "CdkPoc/items/Resource",
+                "path": "cdk-poc-dev/cdk-poc-dev-items/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
                   "aws:cdk:cloudformation:props": {
@@ -38,11 +38,15 @@
                       "readCapacityUnits": 5,
                       "writeCapacityUnits": 5
                     },
-                    "tableName": "items",
+                    "tableName": "cdk-poc-dev-items",
                     "tags": [
                       {
-                        "key": "cdkpoc",
-                        "value": "cdkpoc"
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-dev",
+                        "value": "cdk-poc-dev"
                       }
                     ]
                   }
@@ -50,21 +54,21 @@
               },
               "ScalingRole": {
                 "id": "ScalingRole",
-                "path": "CdkPoc/items/ScalingRole"
+                "path": "cdk-poc-dev/cdk-poc-dev-items/ScalingRole"
               }
             }
           },
           "getOneItemFunction": {
             "id": "getOneItemFunction",
-            "path": "CdkPoc/getOneItemFunction",
+            "path": "cdk-poc-dev/getOneItemFunction",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "CdkPoc/getOneItemFunction/ServiceRole",
+                "path": "cdk-poc-dev/getOneItemFunction/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/getOneItemFunction/ServiceRole/Resource",
+                    "path": "cdk-poc-dev/getOneItemFunction/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -96,8 +100,12 @@
                         ],
                         "tags": [
                           {
-                            "key": "cdkpoc",
-                            "value": "cdkpoc"
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-dev",
+                            "value": "cdk-poc-dev"
                           }
                         ]
                       }
@@ -105,11 +113,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "CdkPoc/getOneItemFunction/ServiceRole/DefaultPolicy",
+                    "path": "cdk-poc-dev/getOneItemFunction/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "CdkPoc/getOneItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "path": "cdk-poc-dev/getOneItemFunction/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -132,7 +140,7 @@
                                   "Resource": [
                                     {
                                       "Fn::GetAtt": [
-                                        "items07D08F4B",
+                                        "cdkpocdevitems1255DD32",
                                         "Arn"
                                       ]
                                     },
@@ -159,27 +167,27 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "CdkPoc/getOneItemFunction/Code",
+                "path": "cdk-poc-dev/getOneItemFunction/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "CdkPoc/getOneItemFunction/Code/Stage"
+                    "path": "cdk-poc-dev/getOneItemFunction/Code/Stage"
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "CdkPoc/getOneItemFunction/Code/AssetBucket"
+                    "path": "cdk-poc-dev/getOneItemFunction/Code/AssetBucket"
                   }
                 }
               },
               "Resource": {
                 "id": "Resource",
-                "path": "CdkPoc/getOneItemFunction/Resource",
+                "path": "cdk-poc-dev/getOneItemFunction/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3Bucket09D45E9E"
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -192,7 +200,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -205,7 +213,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -226,15 +234,19 @@
                     "environment": {
                       "variables": {
                         "TABLE_NAME": {
-                          "Ref": "items07D08F4B"
+                          "Ref": "cdkpocdevitems1255DD32"
                         },
                         "PRIMARY_KEY": "itemId"
                       }
                     },
                     "tags": [
                       {
-                        "key": "cdkpoc",
-                        "value": "cdkpoc"
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-dev",
+                        "value": "cdk-poc-dev"
                       }
                     ]
                   }
@@ -244,23 +256,23 @@
           },
           "AssetParameters": {
             "id": "AssetParameters",
-            "path": "CdkPoc/AssetParameters",
+            "path": "cdk-poc-dev/AssetParameters",
             "children": {
-              "7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3": {
-                "id": "7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3",
-                "path": "CdkPoc/AssetParameters/7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3",
+              "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415": {
+                "id": "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+                "path": "cdk-poc-dev/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
                 "children": {
                   "S3Bucket": {
                     "id": "S3Bucket",
-                    "path": "CdkPoc/AssetParameters/7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3/S3Bucket"
+                    "path": "cdk-poc-dev/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3Bucket"
                   },
                   "S3VersionKey": {
                     "id": "S3VersionKey",
-                    "path": "CdkPoc/AssetParameters/7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3/S3VersionKey"
+                    "path": "cdk-poc-dev/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3VersionKey"
                   },
                   "ArtifactHash": {
                     "id": "ArtifactHash",
-                    "path": "CdkPoc/AssetParameters/7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3/ArtifactHash"
+                    "path": "cdk-poc-dev/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/ArtifactHash"
                   }
                 }
               }
@@ -268,15 +280,15 @@
           },
           "getAllItemsFunction": {
             "id": "getAllItemsFunction",
-            "path": "CdkPoc/getAllItemsFunction",
+            "path": "cdk-poc-dev/getAllItemsFunction",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "CdkPoc/getAllItemsFunction/ServiceRole",
+                "path": "cdk-poc-dev/getAllItemsFunction/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/getAllItemsFunction/ServiceRole/Resource",
+                    "path": "cdk-poc-dev/getAllItemsFunction/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -308,8 +320,12 @@
                         ],
                         "tags": [
                           {
-                            "key": "cdkpoc",
-                            "value": "cdkpoc"
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-dev",
+                            "value": "cdk-poc-dev"
                           }
                         ]
                       }
@@ -317,11 +333,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "CdkPoc/getAllItemsFunction/ServiceRole/DefaultPolicy",
+                    "path": "cdk-poc-dev/getAllItemsFunction/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "CdkPoc/getAllItemsFunction/ServiceRole/DefaultPolicy/Resource",
+                        "path": "cdk-poc-dev/getAllItemsFunction/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -344,7 +360,7 @@
                                   "Resource": [
                                     {
                                       "Fn::GetAtt": [
-                                        "items07D08F4B",
+                                        "cdkpocdevitems1255DD32",
                                         "Arn"
                                       ]
                                     },
@@ -371,27 +387,27 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "CdkPoc/getAllItemsFunction/Code",
+                "path": "cdk-poc-dev/getAllItemsFunction/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "CdkPoc/getAllItemsFunction/Code/Stage"
+                    "path": "cdk-poc-dev/getAllItemsFunction/Code/Stage"
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "CdkPoc/getAllItemsFunction/Code/AssetBucket"
+                    "path": "cdk-poc-dev/getAllItemsFunction/Code/AssetBucket"
                   }
                 }
               },
               "Resource": {
                 "id": "Resource",
-                "path": "CdkPoc/getAllItemsFunction/Resource",
+                "path": "cdk-poc-dev/getAllItemsFunction/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3Bucket09D45E9E"
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -404,7 +420,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -417,7 +433,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -438,15 +454,19 @@
                     "environment": {
                       "variables": {
                         "TABLE_NAME": {
-                          "Ref": "items07D08F4B"
+                          "Ref": "cdkpocdevitems1255DD32"
                         },
                         "PRIMARY_KEY": "itemId"
                       }
                     },
                     "tags": [
                       {
-                        "key": "cdkpoc",
-                        "value": "cdkpoc"
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-dev",
+                        "value": "cdk-poc-dev"
                       }
                     ]
                   }
@@ -456,15 +476,15 @@
           },
           "createItemFunction": {
             "id": "createItemFunction",
-            "path": "CdkPoc/createItemFunction",
+            "path": "cdk-poc-dev/createItemFunction",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "CdkPoc/createItemFunction/ServiceRole",
+                "path": "cdk-poc-dev/createItemFunction/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/createItemFunction/ServiceRole/Resource",
+                    "path": "cdk-poc-dev/createItemFunction/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -496,8 +516,12 @@
                         ],
                         "tags": [
                           {
-                            "key": "cdkpoc",
-                            "value": "cdkpoc"
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-dev",
+                            "value": "cdk-poc-dev"
                           }
                         ]
                       }
@@ -505,11 +529,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "CdkPoc/createItemFunction/ServiceRole/DefaultPolicy",
+                    "path": "cdk-poc-dev/createItemFunction/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "CdkPoc/createItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "path": "cdk-poc-dev/createItemFunction/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -532,7 +556,7 @@
                                   "Resource": [
                                     {
                                       "Fn::GetAtt": [
-                                        "items07D08F4B",
+                                        "cdkpocdevitems1255DD32",
                                         "Arn"
                                       ]
                                     },
@@ -559,27 +583,27 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "CdkPoc/createItemFunction/Code",
+                "path": "cdk-poc-dev/createItemFunction/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "CdkPoc/createItemFunction/Code/Stage"
+                    "path": "cdk-poc-dev/createItemFunction/Code/Stage"
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "CdkPoc/createItemFunction/Code/AssetBucket"
+                    "path": "cdk-poc-dev/createItemFunction/Code/AssetBucket"
                   }
                 }
               },
               "Resource": {
                 "id": "Resource",
-                "path": "CdkPoc/createItemFunction/Resource",
+                "path": "cdk-poc-dev/createItemFunction/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3Bucket09D45E9E"
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -592,7 +616,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -605,7 +629,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -626,15 +650,19 @@
                     "environment": {
                       "variables": {
                         "TABLE_NAME": {
-                          "Ref": "items07D08F4B"
+                          "Ref": "cdkpocdevitems1255DD32"
                         },
                         "PRIMARY_KEY": "itemId"
                       }
                     },
                     "tags": [
                       {
-                        "key": "cdkpoc",
-                        "value": "cdkpoc"
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-dev",
+                        "value": "cdk-poc-dev"
                       }
                     ]
                   }
@@ -644,15 +672,15 @@
           },
           "updateItemFunction": {
             "id": "updateItemFunction",
-            "path": "CdkPoc/updateItemFunction",
+            "path": "cdk-poc-dev/updateItemFunction",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "CdkPoc/updateItemFunction/ServiceRole",
+                "path": "cdk-poc-dev/updateItemFunction/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/updateItemFunction/ServiceRole/Resource",
+                    "path": "cdk-poc-dev/updateItemFunction/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -684,8 +712,12 @@
                         ],
                         "tags": [
                           {
-                            "key": "cdkpoc",
-                            "value": "cdkpoc"
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-dev",
+                            "value": "cdk-poc-dev"
                           }
                         ]
                       }
@@ -693,11 +725,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "CdkPoc/updateItemFunction/ServiceRole/DefaultPolicy",
+                    "path": "cdk-poc-dev/updateItemFunction/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "CdkPoc/updateItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "path": "cdk-poc-dev/updateItemFunction/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -720,7 +752,7 @@
                                   "Resource": [
                                     {
                                       "Fn::GetAtt": [
-                                        "items07D08F4B",
+                                        "cdkpocdevitems1255DD32",
                                         "Arn"
                                       ]
                                     },
@@ -747,27 +779,27 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "CdkPoc/updateItemFunction/Code",
+                "path": "cdk-poc-dev/updateItemFunction/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "CdkPoc/updateItemFunction/Code/Stage"
+                    "path": "cdk-poc-dev/updateItemFunction/Code/Stage"
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "CdkPoc/updateItemFunction/Code/AssetBucket"
+                    "path": "cdk-poc-dev/updateItemFunction/Code/AssetBucket"
                   }
                 }
               },
               "Resource": {
                 "id": "Resource",
-                "path": "CdkPoc/updateItemFunction/Resource",
+                "path": "cdk-poc-dev/updateItemFunction/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3Bucket09D45E9E"
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -780,7 +812,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -793,7 +825,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -814,15 +846,19 @@
                     "environment": {
                       "variables": {
                         "TABLE_NAME": {
-                          "Ref": "items07D08F4B"
+                          "Ref": "cdkpocdevitems1255DD32"
                         },
                         "PRIMARY_KEY": "itemId"
                       }
                     },
                     "tags": [
                       {
-                        "key": "cdkpoc",
-                        "value": "cdkpoc"
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-dev",
+                        "value": "cdk-poc-dev"
                       }
                     ]
                   }
@@ -832,15 +868,15 @@
           },
           "deleteItemFunction": {
             "id": "deleteItemFunction",
-            "path": "CdkPoc/deleteItemFunction",
+            "path": "cdk-poc-dev/deleteItemFunction",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "CdkPoc/deleteItemFunction/ServiceRole",
+                "path": "cdk-poc-dev/deleteItemFunction/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/deleteItemFunction/ServiceRole/Resource",
+                    "path": "cdk-poc-dev/deleteItemFunction/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -872,8 +908,12 @@
                         ],
                         "tags": [
                           {
-                            "key": "cdkpoc",
-                            "value": "cdkpoc"
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-dev",
+                            "value": "cdk-poc-dev"
                           }
                         ]
                       }
@@ -881,11 +921,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "CdkPoc/deleteItemFunction/ServiceRole/DefaultPolicy",
+                    "path": "cdk-poc-dev/deleteItemFunction/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "CdkPoc/deleteItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "path": "cdk-poc-dev/deleteItemFunction/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -908,7 +948,7 @@
                                   "Resource": [
                                     {
                                       "Fn::GetAtt": [
-                                        "items07D08F4B",
+                                        "cdkpocdevitems1255DD32",
                                         "Arn"
                                       ]
                                     },
@@ -935,27 +975,27 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "CdkPoc/deleteItemFunction/Code",
+                "path": "cdk-poc-dev/deleteItemFunction/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "CdkPoc/deleteItemFunction/Code/Stage"
+                    "path": "cdk-poc-dev/deleteItemFunction/Code/Stage"
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "CdkPoc/deleteItemFunction/Code/AssetBucket"
+                    "path": "cdk-poc-dev/deleteItemFunction/Code/AssetBucket"
                   }
                 }
               },
               "Resource": {
                 "id": "Resource",
-                "path": "CdkPoc/deleteItemFunction/Resource",
+                "path": "cdk-poc-dev/deleteItemFunction/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3Bucket09D45E9E"
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -968,7 +1008,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -981,7 +1021,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884"
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
                                     }
                                   ]
                                 }
@@ -1002,15 +1042,19 @@
                     "environment": {
                       "variables": {
                         "TABLE_NAME": {
-                          "Ref": "items07D08F4B"
+                          "Ref": "cdkpocdevitems1255DD32"
                         },
                         "PRIMARY_KEY": "itemId"
                       }
                     },
                     "tags": [
                       {
-                        "key": "cdkpoc",
-                        "value": "cdkpoc"
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-dev",
+                        "value": "cdk-poc-dev"
                       }
                     ]
                   }
@@ -1018,21 +1062,25 @@
               }
             }
           },
-          "itemsApi": {
-            "id": "itemsApi",
-            "path": "CdkPoc/itemsApi",
+          "cdk-poc-dev-items-api": {
+            "id": "cdk-poc-dev-items-api",
+            "path": "cdk-poc-dev/cdk-poc-dev-items-api",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "CdkPoc/itemsApi/Resource",
+                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
                   "aws:cdk:cloudformation:props": {
-                    "name": "Items Service",
+                    "name": "cdk-poc-dev-items",
                     "tags": [
                       {
-                        "key": "cdkpoc",
-                        "value": "cdkpoc"
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-dev",
+                        "value": "cdk-poc-dev"
                       }
                     ]
                   }
@@ -1040,16 +1088,16 @@
               },
               "Deployment": {
                 "id": "Deployment",
-                "path": "CdkPoc/itemsApi/Deployment",
+                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Deployment",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/itemsApi/Deployment/Resource",
+                    "path": "cdk-poc-dev/cdk-poc-dev-items-api/Deployment/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
                       "aws:cdk:cloudformation:props": {
                         "restApiId": {
-                          "Ref": "itemsApi28111E1C"
+                          "Ref": "cdkpocdevitemsapiD914E96B"
                         },
                         "description": "Automatically created by the RestApi construct"
                       }
@@ -1059,25 +1107,29 @@
               },
               "DeploymentStage.prod": {
                 "id": "DeploymentStage.prod",
-                "path": "CdkPoc/itemsApi/DeploymentStage.prod",
+                "path": "cdk-poc-dev/cdk-poc-dev-items-api/DeploymentStage.prod",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/itemsApi/DeploymentStage.prod/Resource",
+                    "path": "cdk-poc-dev/cdk-poc-dev-items-api/DeploymentStage.prod/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
                       "aws:cdk:cloudformation:props": {
                         "restApiId": {
-                          "Ref": "itemsApi28111E1C"
+                          "Ref": "cdkpocdevitemsapiD914E96B"
                         },
                         "deploymentId": {
-                          "Ref": "itemsApiDeploymentFEC31BD0463f2f0ae75a8bce473f7bfda7158ff8"
+                          "Ref": "cdkpocdevitemsapiDeployment8BA206E06d0ba68fe9b68be3b71ac098dc06d258"
                         },
                         "stageName": "prod",
                         "tags": [
                           {
-                            "key": "cdkpoc",
-                            "value": "cdkpoc"
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-dev",
+                            "value": "cdk-poc-dev"
                           }
                         ]
                       }
@@ -1087,15 +1139,15 @@
               },
               "Endpoint": {
                 "id": "Endpoint",
-                "path": "CdkPoc/itemsApi/Endpoint"
+                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Endpoint"
               },
               "CloudWatchRole": {
                 "id": "CloudWatchRole",
-                "path": "CdkPoc/itemsApi/CloudWatchRole",
+                "path": "cdk-poc-dev/cdk-poc-dev-items-api/CloudWatchRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CdkPoc/itemsApi/CloudWatchRole/Resource",
+                    "path": "cdk-poc-dev/cdk-poc-dev-items-api/CloudWatchRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -1127,8 +1179,12 @@
                         ],
                         "tags": [
                           {
-                            "key": "cdkpoc",
-                            "value": "cdkpoc"
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-dev",
+                            "value": "cdk-poc-dev"
                           }
                         ]
                       }
@@ -1138,13 +1194,13 @@
               },
               "Account": {
                 "id": "Account",
-                "path": "CdkPoc/itemsApi/Account",
+                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Account",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::Account",
                   "aws:cdk:cloudformation:props": {
                     "cloudWatchRoleArn": {
                       "Fn::GetAtt": [
-                        "itemsApiCloudWatchRoleB5C7B431",
+                        "cdkpocdevitemsapiCloudWatchRole20A495BF",
                         "Arn"
                       ]
                     }
@@ -1153,38 +1209,38 @@
               },
               "Default": {
                 "id": "Default",
-                "path": "CdkPoc/itemsApi/Default",
+                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default",
                 "children": {
                   "items": {
                     "id": "items",
-                    "path": "CdkPoc/itemsApi/Default/items",
+                    "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "CdkPoc/itemsApi/Default/items/Resource",
+                        "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
                           "aws:cdk:cloudformation:props": {
                             "parentId": {
                               "Fn::GetAtt": [
-                                "itemsApi28111E1C",
+                                "cdkpocdevitemsapiD914E96B",
                                 "RootResourceId"
                               ]
                             },
                             "pathPart": "items",
                             "restApiId": {
-                              "Ref": "itemsApi28111E1C"
+                              "Ref": "cdkpocdevitemsapiD914E96B"
                             }
                           }
                         }
                       },
                       "GET": {
                         "id": "GET",
-                        "path": "CdkPoc/itemsApi/Default/items/GET",
+                        "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/GET",
                         "children": {
-                          "ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items": {
-                            "id": "ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items",
-                            "path": "CdkPoc/itemsApi/Default/items/GET/ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items",
+                          "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items": {
+                            "id": "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/GET/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                               "aws:cdk:cloudformation:props": {
@@ -1214,11 +1270,11 @@
                                       },
                                       ":",
                                       {
-                                        "Ref": "itemsApi28111E1C"
+                                        "Ref": "cdkpocdevitemsapiD914E96B"
                                       },
                                       "/",
                                       {
-                                        "Ref": "itemsApiDeploymentStageprodE77B897D"
+                                        "Ref": "cdkpocdevitemsapiDeploymentStageprodC39C4CBE"
                                       },
                                       "/GET/items"
                                     ]
@@ -1227,9 +1283,9 @@
                               }
                             }
                           },
-                          "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items": {
-                            "id": "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items",
-                            "path": "CdkPoc/itemsApi/Default/items/GET/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items",
+                          "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items": {
+                            "id": "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/GET/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                               "aws:cdk:cloudformation:props": {
@@ -1259,7 +1315,7 @@
                                       },
                                       ":",
                                       {
-                                        "Ref": "itemsApi28111E1C"
+                                        "Ref": "cdkpocdevitemsapiD914E96B"
                                       },
                                       "/test-invoke-stage/GET/items"
                                     ]
@@ -1270,16 +1326,16 @@
                           },
                           "Resource": {
                             "id": "Resource",
-                            "path": "CdkPoc/itemsApi/Default/items/GET/Resource",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/GET/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                               "aws:cdk:cloudformation:props": {
                                 "httpMethod": "GET",
                                 "resourceId": {
-                                  "Ref": "itemsApiitems9015DBED"
+                                  "Ref": "cdkpocdevitemsapiitems48FFFB93"
                                 },
                                 "restApiId": {
-                                  "Ref": "itemsApi28111E1C"
+                                  "Ref": "cdkpocdevitemsapiD914E96B"
                                 },
                                 "authorizationType": "NONE",
                                 "integration": {
@@ -1316,11 +1372,11 @@
                       },
                       "POST": {
                         "id": "POST",
-                        "path": "CdkPoc/itemsApi/Default/items/POST",
+                        "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/POST",
                         "children": {
-                          "ApiPermission.CdkPocitemsApiC7ACC1FF.POST..items": {
-                            "id": "ApiPermission.CdkPocitemsApiC7ACC1FF.POST..items",
-                            "path": "CdkPoc/itemsApi/Default/items/POST/ApiPermission.CdkPocitemsApiC7ACC1FF.POST..items",
+                          "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items": {
+                            "id": "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/POST/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                               "aws:cdk:cloudformation:props": {
@@ -1350,11 +1406,11 @@
                                       },
                                       ":",
                                       {
-                                        "Ref": "itemsApi28111E1C"
+                                        "Ref": "cdkpocdevitemsapiD914E96B"
                                       },
                                       "/",
                                       {
-                                        "Ref": "itemsApiDeploymentStageprodE77B897D"
+                                        "Ref": "cdkpocdevitemsapiDeploymentStageprodC39C4CBE"
                                       },
                                       "/POST/items"
                                     ]
@@ -1363,9 +1419,9 @@
                               }
                             }
                           },
-                          "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.POST..items": {
-                            "id": "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.POST..items",
-                            "path": "CdkPoc/itemsApi/Default/items/POST/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.POST..items",
+                          "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items": {
+                            "id": "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/POST/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                               "aws:cdk:cloudformation:props": {
@@ -1395,7 +1451,7 @@
                                       },
                                       ":",
                                       {
-                                        "Ref": "itemsApi28111E1C"
+                                        "Ref": "cdkpocdevitemsapiD914E96B"
                                       },
                                       "/test-invoke-stage/POST/items"
                                     ]
@@ -1406,16 +1462,16 @@
                           },
                           "Resource": {
                             "id": "Resource",
-                            "path": "CdkPoc/itemsApi/Default/items/POST/Resource",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/POST/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                               "aws:cdk:cloudformation:props": {
                                 "httpMethod": "POST",
                                 "resourceId": {
-                                  "Ref": "itemsApiitems9015DBED"
+                                  "Ref": "cdkpocdevitemsapiitems48FFFB93"
                                 },
                                 "restApiId": {
-                                  "Ref": "itemsApi28111E1C"
+                                  "Ref": "cdkpocdevitemsapiD914E96B"
                                 },
                                 "authorizationType": "NONE",
                                 "integration": {
@@ -1452,20 +1508,20 @@
                       },
                       "OPTIONS": {
                         "id": "OPTIONS",
-                        "path": "CdkPoc/itemsApi/Default/items/OPTIONS",
+                        "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/OPTIONS",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "CdkPoc/itemsApi/Default/items/OPTIONS/Resource",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/OPTIONS/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                               "aws:cdk:cloudformation:props": {
                                 "httpMethod": "OPTIONS",
                                 "resourceId": {
-                                  "Ref": "itemsApiitems9015DBED"
+                                  "Ref": "cdkpocdevitemsapiitems48FFFB93"
                                 },
                                 "restApiId": {
-                                  "Ref": "itemsApi28111E1C"
+                                  "Ref": "cdkpocdevitemsapiD914E96B"
                                 },
                                 "authorizationType": "NONE",
                                 "integration": {
@@ -1504,31 +1560,31 @@
                       },
                       "{id}": {
                         "id": "{id}",
-                        "path": "CdkPoc/itemsApi/Default/items/{id}",
+                        "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "CdkPoc/itemsApi/Default/items/{id}/Resource",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
                               "aws:cdk:cloudformation:props": {
                                 "parentId": {
-                                  "Ref": "itemsApiitems9015DBED"
+                                  "Ref": "cdkpocdevitemsapiitems48FFFB93"
                                 },
                                 "pathPart": "{id}",
                                 "restApiId": {
-                                  "Ref": "itemsApi28111E1C"
+                                  "Ref": "cdkpocdevitemsapiD914E96B"
                                 }
                               }
                             }
                           },
                           "GET": {
                             "id": "GET",
-                            "path": "CdkPoc/itemsApi/Default/items/{id}/GET",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/GET",
                             "children": {
-                              "ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items.{id}": {
-                                "id": "ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items.{id}",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/GET/ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items.{id}",
+                              "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}": {
+                                "id": "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/GET/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -1558,11 +1614,11 @@
                                           },
                                           ":",
                                           {
-                                            "Ref": "itemsApi28111E1C"
+                                            "Ref": "cdkpocdevitemsapiD914E96B"
                                           },
                                           "/",
                                           {
-                                            "Ref": "itemsApiDeploymentStageprodE77B897D"
+                                            "Ref": "cdkpocdevitemsapiDeploymentStageprodC39C4CBE"
                                           },
                                           "/GET/items/{id}"
                                         ]
@@ -1571,9 +1627,9 @@
                                   }
                                 }
                               },
-                              "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items.{id}": {
-                                "id": "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items.{id}",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/GET/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items.{id}",
+                              "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}": {
+                                "id": "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/GET/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -1603,7 +1659,7 @@
                                           },
                                           ":",
                                           {
-                                            "Ref": "itemsApi28111E1C"
+                                            "Ref": "cdkpocdevitemsapiD914E96B"
                                           },
                                           "/test-invoke-stage/GET/items/{id}"
                                         ]
@@ -1614,16 +1670,16 @@
                               },
                               "Resource": {
                                 "id": "Resource",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/GET/Resource",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/GET/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                                   "aws:cdk:cloudformation:props": {
                                     "httpMethod": "GET",
                                     "resourceId": {
-                                      "Ref": "itemsApiitemsidA29927C2"
+                                      "Ref": "cdkpocdevitemsapiitemsid91F7CC88"
                                     },
                                     "restApiId": {
-                                      "Ref": "itemsApi28111E1C"
+                                      "Ref": "cdkpocdevitemsapiD914E96B"
                                     },
                                     "authorizationType": "NONE",
                                     "integration": {
@@ -1660,11 +1716,11 @@
                           },
                           "PATCH": {
                             "id": "PATCH",
-                            "path": "CdkPoc/itemsApi/Default/items/{id}/PATCH",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/PATCH",
                             "children": {
-                              "ApiPermission.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}": {
-                                "id": "ApiPermission.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/PATCH/ApiPermission.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}",
+                              "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}": {
+                                "id": "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/PATCH/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -1694,11 +1750,11 @@
                                           },
                                           ":",
                                           {
-                                            "Ref": "itemsApi28111E1C"
+                                            "Ref": "cdkpocdevitemsapiD914E96B"
                                           },
                                           "/",
                                           {
-                                            "Ref": "itemsApiDeploymentStageprodE77B897D"
+                                            "Ref": "cdkpocdevitemsapiDeploymentStageprodC39C4CBE"
                                           },
                                           "/PATCH/items/{id}"
                                         ]
@@ -1707,9 +1763,9 @@
                                   }
                                 }
                               },
-                              "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}": {
-                                "id": "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/PATCH/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}",
+                              "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}": {
+                                "id": "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/PATCH/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -1739,7 +1795,7 @@
                                           },
                                           ":",
                                           {
-                                            "Ref": "itemsApi28111E1C"
+                                            "Ref": "cdkpocdevitemsapiD914E96B"
                                           },
                                           "/test-invoke-stage/PATCH/items/{id}"
                                         ]
@@ -1750,16 +1806,16 @@
                               },
                               "Resource": {
                                 "id": "Resource",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/PATCH/Resource",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/PATCH/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                                   "aws:cdk:cloudformation:props": {
                                     "httpMethod": "PATCH",
                                     "resourceId": {
-                                      "Ref": "itemsApiitemsidA29927C2"
+                                      "Ref": "cdkpocdevitemsapiitemsid91F7CC88"
                                     },
                                     "restApiId": {
-                                      "Ref": "itemsApi28111E1C"
+                                      "Ref": "cdkpocdevitemsapiD914E96B"
                                     },
                                     "authorizationType": "NONE",
                                     "integration": {
@@ -1796,11 +1852,11 @@
                           },
                           "DELETE": {
                             "id": "DELETE",
-                            "path": "CdkPoc/itemsApi/Default/items/{id}/DELETE",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/DELETE",
                             "children": {
-                              "ApiPermission.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}": {
-                                "id": "ApiPermission.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/DELETE/ApiPermission.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}",
+                              "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}": {
+                                "id": "ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/DELETE/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -1830,11 +1886,11 @@
                                           },
                                           ":",
                                           {
-                                            "Ref": "itemsApi28111E1C"
+                                            "Ref": "cdkpocdevitemsapiD914E96B"
                                           },
                                           "/",
                                           {
-                                            "Ref": "itemsApiDeploymentStageprodE77B897D"
+                                            "Ref": "cdkpocdevitemsapiDeploymentStageprodC39C4CBE"
                                           },
                                           "/DELETE/items/{id}"
                                         ]
@@ -1843,9 +1899,9 @@
                                   }
                                 }
                               },
-                              "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}": {
-                                "id": "ApiPermission.Test.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/DELETE/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}",
+                              "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}": {
+                                "id": "ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/DELETE/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -1875,7 +1931,7 @@
                                           },
                                           ":",
                                           {
-                                            "Ref": "itemsApi28111E1C"
+                                            "Ref": "cdkpocdevitemsapiD914E96B"
                                           },
                                           "/test-invoke-stage/DELETE/items/{id}"
                                         ]
@@ -1886,16 +1942,16 @@
                               },
                               "Resource": {
                                 "id": "Resource",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/DELETE/Resource",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/DELETE/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                                   "aws:cdk:cloudformation:props": {
                                     "httpMethod": "DELETE",
                                     "resourceId": {
-                                      "Ref": "itemsApiitemsidA29927C2"
+                                      "Ref": "cdkpocdevitemsapiitemsid91F7CC88"
                                     },
                                     "restApiId": {
-                                      "Ref": "itemsApi28111E1C"
+                                      "Ref": "cdkpocdevitemsapiD914E96B"
                                     },
                                     "authorizationType": "NONE",
                                     "integration": {
@@ -1932,20 +1988,2060 @@
                           },
                           "OPTIONS": {
                             "id": "OPTIONS",
-                            "path": "CdkPoc/itemsApi/Default/items/{id}/OPTIONS",
+                            "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/OPTIONS",
                             "children": {
                               "Resource": {
                                 "id": "Resource",
-                                "path": "CdkPoc/itemsApi/Default/items/{id}/OPTIONS/Resource",
+                                "path": "cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/OPTIONS/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                                   "aws:cdk:cloudformation:props": {
                                     "httpMethod": "OPTIONS",
                                     "resourceId": {
-                                      "Ref": "itemsApiitemsidA29927C2"
+                                      "Ref": "cdkpocdevitemsapiitemsid91F7CC88"
                                     },
                                     "restApiId": {
-                                      "Ref": "itemsApi28111E1C"
+                                      "Ref": "cdkpocdevitemsapiD914E96B"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "MOCK",
+                                      "requestTemplates": {
+                                        "application/json": "{\"statusCode\": 200}"
+                                      },
+                                      "passthroughBehavior": "NEVER",
+                                      "integrationResponses": [
+                                        {
+                                          "statusCode": "200",
+                                          "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'",
+                                            "method.response.header.Access-Control-Allow-Credentials": "'false'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE'"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "methodResponses": [
+                                      {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                          "method.response.header.Access-Control-Allow-Headers": true,
+                                          "method.response.header.Access-Control-Allow-Methods": true,
+                                          "method.response.header.Access-Control-Allow-Credentials": true,
+                                          "method.response.header.Access-Control-Allow-Origin": true
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "cdk-poc-prod": {
+        "id": "cdk-poc-prod",
+        "path": "cdk-poc-prod",
+        "children": {
+          "cdk-poc-prod-items": {
+            "id": "cdk-poc-prod-items",
+            "path": "cdk-poc-prod/cdk-poc-prod-items",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-poc-prod/cdk-poc-prod-items/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                  "aws:cdk:cloudformation:props": {
+                    "keySchema": [
+                      {
+                        "attributeName": "itemId",
+                        "keyType": "HASH"
+                      }
+                    ],
+                    "attributeDefinitions": [
+                      {
+                        "attributeName": "itemId",
+                        "attributeType": "S"
+                      }
+                    ],
+                    "provisionedThroughput": {
+                      "readCapacityUnits": 5,
+                      "writeCapacityUnits": 5
+                    },
+                    "tableName": "cdk-poc-prod-items",
+                    "tags": [
+                      {
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-prod",
+                        "value": "cdk-poc-prod"
+                      }
+                    ]
+                  }
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "cdk-poc-prod/cdk-poc-prod-items/ScalingRole"
+              }
+            }
+          },
+          "getOneItemFunction": {
+            "id": "getOneItemFunction",
+            "path": "cdk-poc-prod/getOneItemFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-poc-prod/getOneItemFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/getOneItemFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-prod",
+                            "value": "cdk-poc-prod"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-poc-prod/getOneItemFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-poc-prod/getOneItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdkpocproditems3B7505C3",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "getOneItemFunctionServiceRoleDefaultPolicy6B743AA8",
+                            "roles": [
+                              {
+                                "Ref": "getOneItemFunctionServiceRoleCFD54796"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-poc-prod/getOneItemFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-poc-prod/getOneItemFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-poc-prod/getOneItemFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-poc-prod/getOneItemFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "get-one.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "getOneItemFunctionServiceRoleCFD54796",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": {
+                          "Ref": "cdkpocproditems3B7505C3"
+                        },
+                        "PRIMARY_KEY": "itemId"
+                      }
+                    },
+                    "tags": [
+                      {
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-prod",
+                        "value": "cdk-poc-prod"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "cdk-poc-prod/AssetParameters",
+            "children": {
+              "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415": {
+                "id": "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+                "path": "cdk-poc-prod/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "cdk-poc-prod/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "cdk-poc-prod/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "cdk-poc-prod/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/ArtifactHash"
+                  }
+                }
+              }
+            }
+          },
+          "getAllItemsFunction": {
+            "id": "getAllItemsFunction",
+            "path": "cdk-poc-prod/getAllItemsFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-poc-prod/getAllItemsFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/getAllItemsFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-prod",
+                            "value": "cdk-poc-prod"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-poc-prod/getAllItemsFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-poc-prod/getAllItemsFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdkpocproditems3B7505C3",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "getAllItemsFunctionServiceRoleDefaultPolicyF069C759",
+                            "roles": [
+                              {
+                                "Ref": "getAllItemsFunctionServiceRoleCC084440"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-poc-prod/getAllItemsFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-poc-prod/getAllItemsFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-poc-prod/getAllItemsFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-poc-prod/getAllItemsFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "get-all.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "getAllItemsFunctionServiceRoleCC084440",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": {
+                          "Ref": "cdkpocproditems3B7505C3"
+                        },
+                        "PRIMARY_KEY": "itemId"
+                      }
+                    },
+                    "tags": [
+                      {
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-prod",
+                        "value": "cdk-poc-prod"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "createItemFunction": {
+            "id": "createItemFunction",
+            "path": "cdk-poc-prod/createItemFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-poc-prod/createItemFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/createItemFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-prod",
+                            "value": "cdk-poc-prod"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-poc-prod/createItemFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-poc-prod/createItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdkpocproditems3B7505C3",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "createItemFunctionServiceRoleDefaultPolicy8FAF1611",
+                            "roles": [
+                              {
+                                "Ref": "createItemFunctionServiceRole1BBF2178"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-poc-prod/createItemFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-poc-prod/createItemFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-poc-prod/createItemFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-poc-prod/createItemFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "create.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "createItemFunctionServiceRole1BBF2178",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": {
+                          "Ref": "cdkpocproditems3B7505C3"
+                        },
+                        "PRIMARY_KEY": "itemId"
+                      }
+                    },
+                    "tags": [
+                      {
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-prod",
+                        "value": "cdk-poc-prod"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "updateItemFunction": {
+            "id": "updateItemFunction",
+            "path": "cdk-poc-prod/updateItemFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-poc-prod/updateItemFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/updateItemFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-prod",
+                            "value": "cdk-poc-prod"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-poc-prod/updateItemFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-poc-prod/updateItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdkpocproditems3B7505C3",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "updateItemFunctionServiceRoleDefaultPolicy6A793729",
+                            "roles": [
+                              {
+                                "Ref": "updateItemFunctionServiceRole40035396"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-poc-prod/updateItemFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-poc-prod/updateItemFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-poc-prod/updateItemFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-poc-prod/updateItemFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "update-one.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "updateItemFunctionServiceRole40035396",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": {
+                          "Ref": "cdkpocproditems3B7505C3"
+                        },
+                        "PRIMARY_KEY": "itemId"
+                      }
+                    },
+                    "tags": [
+                      {
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-prod",
+                        "value": "cdk-poc-prod"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "deleteItemFunction": {
+            "id": "deleteItemFunction",
+            "path": "cdk-poc-prod/deleteItemFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-poc-prod/deleteItemFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/deleteItemFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-prod",
+                            "value": "cdk-poc-prod"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-poc-prod/deleteItemFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-poc-prod/deleteItemFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdkpocproditems3B7505C3",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "deleteItemFunctionServiceRoleDefaultPolicyDCE46F14",
+                            "roles": [
+                              {
+                                "Ref": "deleteItemFunctionServiceRole5C201FCC"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-poc-prod/deleteItemFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-poc-prod/deleteItemFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-poc-prod/deleteItemFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-poc-prod/deleteItemFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "delete-one.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "deleteItemFunctionServiceRole5C201FCC",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": {
+                          "Ref": "cdkpocproditems3B7505C3"
+                        },
+                        "PRIMARY_KEY": "itemId"
+                      }
+                    },
+                    "tags": [
+                      {
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-prod",
+                        "value": "cdk-poc-prod"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "cdk-poc-prod-items-api": {
+            "id": "cdk-poc-prod-items-api",
+            "path": "cdk-poc-prod/cdk-poc-prod-items-api",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "cdk-poc-prod-items",
+                    "tags": [
+                      {
+                        "key": "cdk-poc",
+                        "value": "cdk-poc"
+                      },
+                      {
+                        "key": "cdk-poc-prod",
+                        "value": "cdk-poc-prod"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Deployment": {
+                "id": "Deployment",
+                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Deployment",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/cdk-poc-prod-items-api/Deployment/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "cdkpocproditemsapi067FC204"
+                        },
+                        "description": "Automatically created by the RestApi construct"
+                      }
+                    }
+                  }
+                }
+              },
+              "DeploymentStage.prod": {
+                "id": "DeploymentStage.prod",
+                "path": "cdk-poc-prod/cdk-poc-prod-items-api/DeploymentStage.prod",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/cdk-poc-prod-items-api/DeploymentStage.prod/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "cdkpocproditemsapi067FC204"
+                        },
+                        "deploymentId": {
+                          "Ref": "cdkpocproditemsapiDeployment451174D204784f25db65ca1a7d976d8da2aecadc"
+                        },
+                        "stageName": "prod",
+                        "tags": [
+                          {
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-prod",
+                            "value": "cdk-poc-prod"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Endpoint": {
+                "id": "Endpoint",
+                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Endpoint"
+              },
+              "CloudWatchRole": {
+                "id": "CloudWatchRole",
+                "path": "cdk-poc-prod/cdk-poc-prod-items-api/CloudWatchRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-poc-prod/cdk-poc-prod-items-api/CloudWatchRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "apigateway.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+                              ]
+                            ]
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "cdk-poc",
+                            "value": "cdk-poc"
+                          },
+                          {
+                            "key": "cdk-poc-prod",
+                            "value": "cdk-poc-prod"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Account": {
+                "id": "Account",
+                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Account",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Account",
+                  "aws:cdk:cloudformation:props": {
+                    "cloudWatchRoleArn": {
+                      "Fn::GetAtt": [
+                        "cdkpocproditemsapiCloudWatchRole5EB8A186",
+                        "Arn"
+                      ]
+                    }
+                  }
+                }
+              },
+              "Default": {
+                "id": "Default",
+                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default",
+                "children": {
+                  "items": {
+                    "id": "items",
+                    "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                          "aws:cdk:cloudformation:props": {
+                            "parentId": {
+                              "Fn::GetAtt": [
+                                "cdkpocproditemsapi067FC204",
+                                "RootResourceId"
+                              ]
+                            },
+                            "pathPart": "items",
+                            "restApiId": {
+                              "Ref": "cdkpocproditemsapi067FC204"
+                            }
+                          }
+                        }
+                      },
+                      "GET": {
+                        "id": "GET",
+                        "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/GET",
+                        "children": {
+                          "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items": {
+                            "id": "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/GET/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "getAllItemsFunction0B7A913E",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "cdkpocproditemsapi067FC204"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "cdkpocproditemsapiDeploymentStageprodC33947A4"
+                                      },
+                                      "/GET/items"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items": {
+                            "id": "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/GET/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "getAllItemsFunction0B7A913E",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "cdkpocproditemsapi067FC204"
+                                      },
+                                      "/test-invoke-stage/GET/items"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/GET/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "GET",
+                                "resourceId": {
+                                  "Ref": "cdkpocproditemsapiitemsE26EA709"
+                                },
+                                "restApiId": {
+                                  "Ref": "cdkpocproditemsapi067FC204"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:",
+                                        {
+                                          "Ref": "AWS::Region"
+                                        },
+                                        ":lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "getAllItemsFunction0B7A913E",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "POST": {
+                        "id": "POST",
+                        "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/POST",
+                        "children": {
+                          "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.POST..items": {
+                            "id": "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.POST..items",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/POST/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.POST..items",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "createItemFunction8D47E48A",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "cdkpocproditemsapi067FC204"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "cdkpocproditemsapiDeploymentStageprodC33947A4"
+                                      },
+                                      "/POST/items"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.POST..items": {
+                            "id": "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.POST..items",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/POST/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.POST..items",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "createItemFunction8D47E48A",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "cdkpocproditemsapi067FC204"
+                                      },
+                                      "/test-invoke-stage/POST/items"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/POST/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "POST",
+                                "resourceId": {
+                                  "Ref": "cdkpocproditemsapiitemsE26EA709"
+                                },
+                                "restApiId": {
+                                  "Ref": "cdkpocproditemsapi067FC204"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:",
+                                        {
+                                          "Ref": "AWS::Region"
+                                        },
+                                        ":lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "createItemFunction8D47E48A",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "OPTIONS": {
+                        "id": "OPTIONS",
+                        "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/OPTIONS",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/OPTIONS/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "OPTIONS",
+                                "resourceId": {
+                                  "Ref": "cdkpocproditemsapiitemsE26EA709"
+                                },
+                                "restApiId": {
+                                  "Ref": "cdkpocproditemsapi067FC204"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "MOCK",
+                                  "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                  },
+                                  "passthroughBehavior": "NEVER",
+                                  "integrationResponses": [
+                                    {
+                                      "statusCode": "200",
+                                      "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                                        "method.response.header.Access-Control-Allow-Origin": "'*'",
+                                        "method.response.header.Access-Control-Allow-Credentials": "'false'",
+                                        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE'"
+                                      }
+                                    }
+                                  ]
+                                },
+                                "methodResponses": [
+                                  {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                      "method.response.header.Access-Control-Allow-Headers": true,
+                                      "method.response.header.Access-Control-Allow-Methods": true,
+                                      "method.response.header.Access-Control-Allow-Credentials": true,
+                                      "method.response.header.Access-Control-Allow-Origin": true
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "{id}": {
+                        "id": "{id}",
+                        "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                              "aws:cdk:cloudformation:props": {
+                                "parentId": {
+                                  "Ref": "cdkpocproditemsapiitemsE26EA709"
+                                },
+                                "pathPart": "{id}",
+                                "restApiId": {
+                                  "Ref": "cdkpocproditemsapi067FC204"
+                                }
+                              }
+                            }
+                          },
+                          "GET": {
+                            "id": "GET",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/GET",
+                            "children": {
+                              "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}": {
+                                "id": "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/GET/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "getOneItemFunctionE3257B22",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "cdkpocproditemsapi067FC204"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "cdkpocproditemsapiDeploymentStageprodC33947A4"
+                                          },
+                                          "/GET/items/{id}"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}": {
+                                "id": "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/GET/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "getOneItemFunctionE3257B22",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "cdkpocproditemsapi067FC204"
+                                          },
+                                          "/test-invoke-stage/GET/items/{id}"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/GET/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "GET",
+                                    "resourceId": {
+                                      "Ref": "cdkpocproditemsapiitemsidE15CB04E"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "cdkpocproditemsapi067FC204"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "getOneItemFunctionE3257B22",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "PATCH": {
+                            "id": "PATCH",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/PATCH",
+                            "children": {
+                              "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}": {
+                                "id": "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/PATCH/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "updateItemFunction59415205",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "cdkpocproditemsapi067FC204"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "cdkpocproditemsapiDeploymentStageprodC33947A4"
+                                          },
+                                          "/PATCH/items/{id}"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}": {
+                                "id": "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/PATCH/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "updateItemFunction59415205",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "cdkpocproditemsapi067FC204"
+                                          },
+                                          "/test-invoke-stage/PATCH/items/{id}"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/PATCH/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "PATCH",
+                                    "resourceId": {
+                                      "Ref": "cdkpocproditemsapiitemsidE15CB04E"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "cdkpocproditemsapi067FC204"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "updateItemFunction59415205",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "DELETE": {
+                            "id": "DELETE",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/DELETE",
+                            "children": {
+                              "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}": {
+                                "id": "ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/DELETE/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "deleteItemFunction2918B1B0",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "cdkpocproditemsapi067FC204"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "cdkpocproditemsapiDeploymentStageprodC33947A4"
+                                          },
+                                          "/DELETE/items/{id}"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}": {
+                                "id": "ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/DELETE/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "deleteItemFunction2918B1B0",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "cdkpocproditemsapi067FC204"
+                                          },
+                                          "/test-invoke-stage/DELETE/items/{id}"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/DELETE/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "DELETE",
+                                    "resourceId": {
+                                      "Ref": "cdkpocproditemsapiitemsidE15CB04E"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "cdkpocproditemsapi067FC204"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "deleteItemFunction2918B1B0",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "OPTIONS": {
+                            "id": "OPTIONS",
+                            "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/OPTIONS",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/OPTIONS/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "OPTIONS",
+                                    "resourceId": {
+                                      "Ref": "cdkpocproditemsapiitemsidE15CB04E"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "cdkpocproditemsapi067FC204"
                                     },
                                     "authorizationType": "NONE",
                                     "integration": {

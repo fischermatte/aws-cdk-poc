@@ -7,12 +7,12 @@ export class CdkPocStack extends Stack {
   constructor(app: App, id: string) {
     super(app, id);
 
-    const dynamoTable = new Table(this, 'items', {
+    const dynamoTable = new Table(this, `${id}-items`, {
       partitionKey: {
         name: 'itemId',
         type: AttributeType.STRING
       },
-      tableName: 'items',
+      tableName: `${id}-items`,
 
       // The default removal policy is RETAIN, which means that cdk destroy will not attempt to delete
       // the new table, and it will remain in your account until manually deleted. By setting the policy to 
@@ -76,8 +76,8 @@ export class CdkPocStack extends Stack {
     dynamoTable.grantReadWriteData(updateOne);
     dynamoTable.grantReadWriteData(deleteOne);
 
-    const api = new RestApi(this, 'itemsApi', {
-      restApiName: 'Items Service'
+    const api = new RestApi(this, `${id}-items-api`, {
+      restApiName: `${id}-items`
     });
 
     const items = api.root.addResource('items');
@@ -130,6 +130,10 @@ export function addCorsOptions(apiResource: IResource) {
 }
 
 const app = new App();
-const stack = new CdkPocStack(app, 'CdkPoc');
-Tag.add(stack, "cdkpoc", "cdkpoc");
+const dev = new CdkPocStack(app, 'cdk-poc-dev');
+const prod = new CdkPocStack(app, 'cdk-poc-prod');
+Tag.add(dev, "cdk-poc", "cdk-poc");
+Tag.add(dev, "cdk-poc-dev", "cdk-poc-dev");
+Tag.add(prod, "cdk-poc", "cdk-poc");
+Tag.add(prod, "cdk-poc-prod", "cdk-poc-prod");
 app.synth();

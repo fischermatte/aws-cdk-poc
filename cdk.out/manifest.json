@@ -7,24 +7,24 @@
         "file": "tree.json"
       }
     },
-    "CdkPoc": {
+    "cdk-poc-dev": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "CdkPoc.template.json"
+        "templateFile": "cdk-poc-dev.template.json"
       },
       "metadata": {
-        "/CdkPoc": [
+        "/cdk-poc-dev": [
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3",
-              "id": "7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3",
+              "path": "asset.ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+              "id": "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
               "packaging": "zip",
-              "sourceHash": "7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3",
-              "s3BucketParameter": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3Bucket09D45E9E",
-              "s3KeyParameter": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884",
-              "artifactHashParameter": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3ArtifactHash19DA5A78"
+              "sourceHash": "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+              "s3BucketParameter": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726",
+              "s3KeyParameter": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38",
+              "artifactHashParameter": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415ArtifactHashDA9EDC47"
             },
             "trace": [
               "ConstructNode.addMetadata (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
@@ -33,7 +33,7 @@
               "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -48,8 +48,12 @@
             "type": "aws:cdk:stack-tags",
             "data": [
               {
-                "Key": "cdkpoc",
-                "Value": "cdkpoc"
+                "Key": "cdk-poc",
+                "Value": "cdk-poc"
+              },
+              {
+                "Key": "cdk-poc-dev",
+                "Value": "cdk-poc-dev"
               }
             ],
             "trace": [
@@ -60,7 +64,7 @@
               "Node.synthesize (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\constructs\\lib\\construct.js:333:14)",
               "Function.synth (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:165:26)",
               "App.synth (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\app.js:71:59)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:122:5)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:126:5)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -72,15 +76,15 @@
             ]
           }
         ],
-        "/CdkPoc/items": [
+        "/cdk-poc-dev/cdk-poc-dev-items": [
           {
             "type": "aws:cdk:hasPhysicalName",
-            "data": "items",
+            "data": "cdk-poc-dev-items",
             "trace": [
               "ConstructNode.addMetadata (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
               "new Table (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:240:23)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:10:29)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -92,14 +96,14 @@
             ]
           }
         ],
-        "/CdkPoc/items/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "items07D08F4B",
+            "data": "cdkpocdevitems1255DD32",
             "trace": [
               "new Table (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:222:22)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:10:29)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -111,7 +115,7 @@
             ]
           }
         ],
-        "/CdkPoc/getOneItemFunction/ServiceRole/Resource": [
+        "/cdk-poc-dev/getOneItemFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "getOneItemFunctionServiceRoleCFD54796",
@@ -119,7 +123,7 @@
               "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -131,7 +135,7 @@
             ]
           }
         ],
-        "/CdkPoc/getOneItemFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/cdk-poc-dev/getOneItemFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "getOneItemFunctionServiceRoleDefaultPolicy6B743AA8",
@@ -142,7 +146,7 @@
               "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
               "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:67:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -154,14 +158,14 @@
             ]
           }
         ],
-        "/CdkPoc/getOneItemFunction/Resource": [
+        "/cdk-poc-dev/getOneItemFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "getOneItemFunctionE3257B22",
             "trace": [
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -173,10 +177,10 @@
             ]
           }
         ],
-        "/CdkPoc/AssetParameters/7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3/S3Bucket": [
+        "/cdk-poc-dev/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3Bucket09D45E9E",
+            "data": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:11:36)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -184,7 +188,7 @@
               "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -196,10 +200,10 @@
             ]
           }
         ],
-        "/CdkPoc/AssetParameters/7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3/S3VersionKey": [
+        "/cdk-poc-dev/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3S3VersionKey8E399884",
+            "data": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:15:35)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -207,7 +211,7 @@
               "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -219,10 +223,10 @@
             ]
           }
         ],
-        "/CdkPoc/AssetParameters/7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3/ArtifactHash": [
+        "/cdk-poc-dev/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters7cfd0312baa79d3c8f0d37165e93837a2d769d8f1e1a1767fffa237cfd957ee3ArtifactHash19DA5A78",
+            "data": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415ArtifactHashDA9EDC47",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:19:38)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -230,7 +234,7 @@
               "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -242,7 +246,7 @@
             ]
           }
         ],
-        "/CdkPoc/getAllItemsFunction/ServiceRole/Resource": [
+        "/cdk-poc-dev/getAllItemsFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "getAllItemsFunctionServiceRoleCC084440",
@@ -250,7 +254,7 @@
               "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:30:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -262,7 +266,7 @@
             ]
           }
         ],
-        "/CdkPoc/getAllItemsFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/cdk-poc-dev/getAllItemsFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "getAllItemsFunctionServiceRoleDefaultPolicyF069C759",
@@ -273,7 +277,7 @@
               "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
               "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:66:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -285,14 +289,14 @@
             ]
           }
         ],
-        "/CdkPoc/getAllItemsFunction/Resource": [
+        "/cdk-poc-dev/getAllItemsFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "getAllItemsFunction0B7A913E",
             "trace": [
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:30:30)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -304,7 +308,7 @@
             ]
           }
         ],
-        "/CdkPoc/createItemFunction/ServiceRole/Resource": [
+        "/cdk-poc-dev/createItemFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "createItemFunctionServiceRole1BBF2178",
@@ -312,7 +316,7 @@
               "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:39:27)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -324,7 +328,7 @@
             ]
           }
         ],
-        "/CdkPoc/createItemFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/cdk-poc-dev/createItemFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "createItemFunctionServiceRoleDefaultPolicy8FAF1611",
@@ -335,7 +339,7 @@
               "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
               "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:68:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -347,14 +351,14 @@
             ]
           }
         ],
-        "/CdkPoc/createItemFunction/Resource": [
+        "/cdk-poc-dev/createItemFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "createItemFunction8D47E48A",
             "trace": [
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:39:27)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -366,7 +370,7 @@
             ]
           }
         ],
-        "/CdkPoc/updateItemFunction/ServiceRole/Resource": [
+        "/cdk-poc-dev/updateItemFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "updateItemFunctionServiceRole40035396",
@@ -374,7 +378,7 @@
               "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:48:27)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -386,7 +390,7 @@
             ]
           }
         ],
-        "/CdkPoc/updateItemFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/cdk-poc-dev/updateItemFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "updateItemFunctionServiceRoleDefaultPolicy6A793729",
@@ -397,7 +401,7 @@
               "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
               "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:69:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -409,14 +413,14 @@
             ]
           }
         ],
-        "/CdkPoc/updateItemFunction/Resource": [
+        "/cdk-poc-dev/updateItemFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "updateItemFunction59415205",
             "trace": [
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:48:27)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -428,7 +432,7 @@
             ]
           }
         ],
-        "/CdkPoc/deleteItemFunction/ServiceRole/Resource": [
+        "/cdk-poc-dev/deleteItemFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "deleteItemFunctionServiceRole5C201FCC",
@@ -436,7 +440,7 @@
               "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:57:27)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -448,7 +452,7 @@
             ]
           }
         ],
-        "/CdkPoc/deleteItemFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/cdk-poc-dev/deleteItemFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "deleteItemFunctionServiceRoleDefaultPolicyDCE46F14",
@@ -459,7 +463,7 @@
               "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
               "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:70:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -471,14 +475,14 @@
             ]
           }
         ],
-        "/CdkPoc/deleteItemFunction/Resource": [
+        "/cdk-poc-dev/deleteItemFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "deleteItemFunction2918B1B0",
             "trace": [
               "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:57:27)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -490,14 +494,14 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApi28111E1C",
+            "data": "cdkpocdevitemsapiD914E96B",
             "trace": [
               "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:31:26)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -509,16 +513,16 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Deployment/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiDeploymentFEC31BD0463f2f0ae75a8bce473f7bfda7158ff8",
+            "data": "cdkpocdevitemsapiDeployment8BA206E06d0ba68fe9b68be3b71ac098dc06d258",
             "trace": [
               "new Deployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\deployment.js:40:25)",
               "RestApi.configureDeployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:187:38)",
               "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -530,16 +534,16 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/DeploymentStage.prod/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/DeploymentStage.prod/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiDeploymentStageprodE77B897D",
+            "data": "cdkpocdevitemsapiDeploymentStageprodC39C4CBE",
             "trace": [
               "new Stage (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\stage.js:47:26)",
               "RestApi.configureDeployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:195:36)",
               "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -551,15 +555,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Endpoint": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Endpoint": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiEndpoint8392E274",
+            "data": "cdkpocdevitemsapiEndpoint46EB2D2E",
             "trace": [
               "RestApi.configureDeployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:199:13)",
               "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -571,16 +575,16 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/CloudWatchRole/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/CloudWatchRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiCloudWatchRoleB5C7B431",
+            "data": "cdkpocdevitemsapiCloudWatchRole20A495BF",
             "trace": [
               "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
               "RestApi.configureCloudWatchRole (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:208:22)",
               "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:48:18)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -592,15 +596,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Account": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Account": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiAccount591BF3E1",
+            "data": "cdkpocdevitemsapiAccount19640610",
             "trace": [
               "RestApi.configureCloudWatchRole (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:212:26)",
               "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:48:18)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -612,15 +616,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitems9015DBED",
+            "data": "cdkpocdevitemsapiitems48FFFB93",
             "trace": [
               "new Resource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:170:26)",
               "RootResource.addResource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:14:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:74:32)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -632,10 +636,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/GET/ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/GET/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsGETApiPermissionCdkPocitemsApiC7ACC1FFGETitemsA323B1FE",
+            "data": "cdkpocdevitemsapiitemsGETApiPermissioncdkpocdevcdkpocdevitemsapiC1243C56GETitems8AE6FC53",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
@@ -643,7 +647,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:76:15)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -655,10 +659,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/GET/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/GET/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsGETApiPermissionTestCdkPocitemsApiC7ACC1FFGETitems61145E19",
+            "data": "cdkpocdevitemsapiitemsGETApiPermissionTestcdkpocdevcdkpocdevitemsapiC1243C56GETitemsDBAE1022",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
@@ -666,7 +670,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:76:15)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -678,15 +682,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/GET/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/GET/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsGET59B0F78A",
+            "data": "cdkpocdevitemsapiitemsGET6DB08037",
             "trace": [
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:76:15)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -698,10 +702,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/POST/ApiPermission.CdkPocitemsApiC7ACC1FF.POST..items": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/POST/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsPOSTApiPermissionCdkPocitemsApiC7ACC1FFPOSTitemsC277D2DF",
+            "data": "cdkpocdevitemsapiitemsPOSTApiPermissioncdkpocdevcdkpocdevitemsapiC1243C56POSTitemsBFE13A10",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
@@ -709,7 +713,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:78:15)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -721,10 +725,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/POST/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.POST..items": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/POST/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.POST..items": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsPOSTApiPermissionTestCdkPocitemsApiC7ACC1FFPOSTitems99DDC9D5",
+            "data": "cdkpocdevitemsapiitemsPOSTApiPermissionTestcdkpocdevcdkpocdevitemsapiC1243C56POSTitems814410CC",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
@@ -732,7 +736,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:78:15)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -744,15 +748,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/POST/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/POST/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsPOSTDD3E83D0",
+            "data": "cdkpocdevitemsapiitemsPOST5B6A2AC9",
             "trace": [
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:78:15)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -764,16 +768,16 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/OPTIONS/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/OPTIONS/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsOPTIONSB46B4D53",
+            "data": "cdkpocdevitemsapiitemsOPTIONS43B164A1",
             "trace": [
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "addCorsOptions (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:92:17)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:79:9)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -785,15 +789,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidA29927C2",
+            "data": "cdkpocdevitemsapiitemsid91F7CC88",
             "trace": [
               "new Resource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:170:26)",
               "Resource.addResource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:14:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:80:34)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -805,10 +809,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/GET/ApiPermission.CdkPocitemsApiC7ACC1FF.GET..items.{id}": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/GET/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidGETApiPermissionCdkPocitemsApiC7ACC1FFGETitemsid2AD76B6B",
+            "data": "cdkpocdevitemsapiitemsidGETApiPermissioncdkpocdevcdkpocdevitemsapiC1243C56GETitemsid210EE9F7",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
@@ -816,7 +820,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:82:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -828,10 +832,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/GET/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.GET..items.{id}": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/GET/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.GET..items.{id}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidGETApiPermissionTestCdkPocitemsApiC7ACC1FFGETitemsid63A1C339",
+            "data": "cdkpocdevitemsapiitemsidGETApiPermissionTestcdkpocdevcdkpocdevitemsapiC1243C56GETitemsid09009B23",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
@@ -839,7 +843,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:82:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -851,15 +855,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/GET/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/GET/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidGET38A333A8",
+            "data": "cdkpocdevitemsapiitemsidGETF9FA0F18",
             "trace": [
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:82:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -871,10 +875,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/PATCH/ApiPermission.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/PATCH/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidPATCHApiPermissionCdkPocitemsApiC7ACC1FFPATCHitemsid5F1E76D8",
+            "data": "cdkpocdevitemsapiitemsidPATCHApiPermissioncdkpocdevcdkpocdevitemsapiC1243C56PATCHitemsidE36DB63F",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
@@ -882,7 +886,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:84:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -894,10 +898,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/PATCH/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.PATCH..items.{id}": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/PATCH/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.PATCH..items.{id}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidPATCHApiPermissionTestCdkPocitemsApiC7ACC1FFPATCHitemsidB74223C4",
+            "data": "cdkpocdevitemsapiitemsidPATCHApiPermissionTestcdkpocdevcdkpocdevitemsapiC1243C56PATCHitemsidCE09D949",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
@@ -905,7 +909,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:84:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -917,15 +921,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/PATCH/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/PATCH/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidPATCH0548CB6A",
+            "data": "cdkpocdevitemsapiitemsidPATCH8E372548",
             "trace": [
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:84:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -937,10 +941,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/DELETE/ApiPermission.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/DELETE/ApiPermission.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidDELETEApiPermissionCdkPocitemsApiC7ACC1FFDELETEitemsid6EC4A198",
+            "data": "cdkpocdevitemsapiitemsidDELETEApiPermissioncdkpocdevcdkpocdevitemsapiC1243C56DELETEitemsidC234F187",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
@@ -948,7 +952,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:86:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -960,10 +964,10 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/DELETE/ApiPermission.Test.CdkPocitemsApiC7ACC1FF.DELETE..items.{id}": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/DELETE/ApiPermission.Test.cdkpocdevcdkpocdevitemsapiC1243C56.DELETE..items.{id}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidDELETEApiPermissionTestCdkPocitemsApiC7ACC1FFDELETEitemsid0F8866F5",
+            "data": "cdkpocdevitemsapiitemsidDELETEApiPermissionTestcdkpocdevcdkpocdevitemsapiC1243C56DELETEitemsid3CA505A2",
             "trace": [
               "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
               "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
@@ -971,7 +975,7 @@
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:86:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -983,15 +987,15 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/DELETE/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/DELETE/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidDELETE21550005",
+            "data": "cdkpocdevitemsapiitemsidDELETE0E9EAFF4",
             "trace": [
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:86:20)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
@@ -1003,16 +1007,1039 @@
             ]
           }
         ],
-        "/CdkPoc/itemsApi/Default/items/{id}/OPTIONS/Resource": [
+        "/cdk-poc-dev/cdk-poc-dev-items-api/Default/items/{id}/OPTIONS/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "itemsApiitemsidOPTIONS62BD91D0",
+            "data": "cdkpocdevitemsapiitemsidOPTIONSBFEDFCFE",
             "trace": [
               "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
               "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
               "addCorsOptions (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:92:17)",
               "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:87:9)",
-              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:120:13)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ]
+      }
+    },
+    "cdk-poc-prod": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "cdk-poc-prod.template.json"
+      },
+      "metadata": {
+        "/cdk-poc-prod": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+              "id": "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+              "packaging": "zip",
+              "sourceHash": "ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415",
+              "s3BucketParameter": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726",
+              "s3KeyParameter": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38",
+              "artifactHashParameter": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415ArtifactHashDA9EDC47"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
+              "CdkPocStack.addFileAsset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:370:23)",
+              "new Asset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          },
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "cdk-poc",
+                "Value": "cdk-poc"
+              },
+              {
+                "Key": "cdk-poc-prod",
+                "Value": "cdk-poc-prod"
+              }
+            ],
+            "trace": [
+              "ConstructNode.addMetadata (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
+              "CdkPocStack.prepare (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:575:23)",
+              "CdkPocStack.onPrepare (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:66:14)",
+              "Node.prepare (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\constructs\\lib\\construct.js:371:27)",
+              "Node.synthesize (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\constructs\\lib\\construct.js:333:14)",
+              "Function.synth (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:165:26)",
+              "App.synth (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\app.js:71:59)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:126:5)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": "cdk-poc-prod-items",
+            "trace": [
+              "ConstructNode.addMetadata (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
+              "new Table (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:240:23)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:10:29)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditems3B7505C3",
+            "trace": [
+              "new Table (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:222:22)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:10:29)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/getOneItemFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getOneItemFunctionServiceRoleCFD54796",
+            "trace": [
+              "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/getOneItemFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getOneItemFunctionServiceRoleDefaultPolicy6B743AA8",
+            "trace": [
+              "new Policy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:161:34)",
+              "Function.addToPrincipal (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:67:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/getOneItemFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getOneItemFunctionE3257B22",
+            "trace": [
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3Bucket60CAE726",
+            "trace": [
+              "new FileAssetParameters (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:11:36)",
+              "CdkPocStack.addFileAsset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
+              "new Asset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415S3VersionKey65F19A38",
+            "trace": [
+              "new FileAssetParameters (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:15:35)",
+              "CdkPocStack.addFileAsset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
+              "new Asset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/AssetParameters/ed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersed9c8eae195eb898bc1e8a333ebf54d19695569c20bbb0bdecdc80277c4eb415ArtifactHashDA9EDC47",
+            "trace": [
+              "new FileAssetParameters (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:19:38)",
+              "CdkPocStack.addFileAsset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
+              "new Asset (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:33)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:21:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/getAllItemsFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getAllItemsFunctionServiceRoleCC084440",
+            "trace": [
+              "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:30:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/getAllItemsFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getAllItemsFunctionServiceRoleDefaultPolicyF069C759",
+            "trace": [
+              "new Policy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:161:34)",
+              "Function.addToPrincipal (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:66:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/getAllItemsFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getAllItemsFunction0B7A913E",
+            "trace": [
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:30:30)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/createItemFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "createItemFunctionServiceRole1BBF2178",
+            "trace": [
+              "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:39:27)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/createItemFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "createItemFunctionServiceRoleDefaultPolicy8FAF1611",
+            "trace": [
+              "new Policy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:161:34)",
+              "Function.addToPrincipal (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:68:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/createItemFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "createItemFunction8D47E48A",
+            "trace": [
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:39:27)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/updateItemFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "updateItemFunctionServiceRole40035396",
+            "trace": [
+              "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:48:27)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/updateItemFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "updateItemFunctionServiceRoleDefaultPolicy6A793729",
+            "trace": [
+              "new Policy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:161:34)",
+              "Function.addToPrincipal (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:69:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/updateItemFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "updateItemFunction59415205",
+            "trace": [
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:48:27)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/deleteItemFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deleteItemFunctionServiceRole5C201FCC",
+            "trace": [
+              "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:61:35)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:57:27)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/deleteItemFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deleteItemFunctionServiceRoleDefaultPolicyDCE46F14",
+            "trace": [
+              "new Policy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:161:34)",
+              "Function.addToPrincipal (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadWriteData (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:70:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/deleteItemFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deleteItemFunction2918B1B0",
+            "trace": [
+              "new Function (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:72:26)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:57:27)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapi067FC204",
+            "trace": [
+              "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:31:26)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiDeployment451174D204784f25db65ca1a7d976d8da2aecadc",
+            "trace": [
+              "new Deployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\deployment.js:40:25)",
+              "RestApi.configureDeployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:187:38)",
+              "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiDeploymentStageprodC33947A4",
+            "trace": [
+              "new Stage (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\stage.js:47:26)",
+              "RestApi.configureDeployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:195:36)",
+              "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiEndpoint5E01CFE3",
+            "trace": [
+              "RestApi.configureDeployment (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:199:13)",
+              "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiCloudWatchRole5EB8A186",
+            "trace": [
+              "new Role (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "RestApi.configureCloudWatchRole (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:208:22)",
+              "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:48:18)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiAccount11838F63",
+            "trace": [
+              "RestApi.configureCloudWatchRole (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:212:26)",
+              "new RestApi (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:48:18)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:71:21)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsE26EA709",
+            "trace": [
+              "new Resource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:170:26)",
+              "RootResource.addResource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:14:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:74:32)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/GET/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsGETApiPermissioncdkpocprodcdkpocproditemsapi8D037055GETitemsD2BE1BBE",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:76:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/GET/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsGETApiPermissionTestcdkpocprodcdkpocproditemsapi8D037055GETitems7BC729E8",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:76:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsGETA629EC08",
+            "trace": [
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:76:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/POST/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.POST..items": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsPOSTApiPermissioncdkpocprodcdkpocproditemsapi8D037055POSTitems9228B97A",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:78:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/POST/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.POST..items": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsPOSTApiPermissionTestcdkpocprodcdkpocproditemsapi8D037055POSTitems398D8B8E",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:78:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsPOST20ABB923",
+            "trace": [
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:78:15)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsOPTIONSC2109809",
+            "trace": [
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "addCorsOptions (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:92:17)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:79:9)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidE15CB04E",
+            "trace": [
+              "new Resource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:170:26)",
+              "Resource.addResource (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:14:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:80:34)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/GET/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidGETApiPermissioncdkpocprodcdkpocproditemsapi8D037055GETitemsidD403FA88",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:82:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/GET/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.GET..items.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidGETApiPermissionTestcdkpocprodcdkpocproditemsapi8D037055GETitemsid75506C1F",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:82:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidGETCD5CE7DC",
+            "trace": [
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:82:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/PATCH/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidPATCHApiPermissioncdkpocprodcdkpocproditemsapi8D037055PATCHitemsid8E68A40A",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:84:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/PATCH/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.PATCH..items.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidPATCHApiPermissionTestcdkpocprodcdkpocproditemsapi8D037055PATCHitemsidDF5D9989",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:84:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/PATCH/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidPATCH419171A0",
+            "trace": [
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:84:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/DELETE/ApiPermission.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidDELETEApiPermissioncdkpocprodcdkpocproditemsapi8D037055DELETEitemsid0BE2ADA4",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:86:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/DELETE/ApiPermission.Test.cdkpocprodcdkpocproditemsapi8D037055.DELETE..items.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidDELETEApiPermissionTestcdkpocprodcdkpocproditemsapi8D037055DELETEitemsid2B4F34C2",
+            "trace": [
+              "Function.addPermission (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:23:9)",
+              "LambdaIntegration.bind (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:86:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidDELETECFE8CAE8",
+            "trace": [
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:86:20)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/cdk-poc-prod/cdk-poc-prod-items-api/Default/items/{id}/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkpocproditemsapiitemsidOPTIONS31130D9C",
+            "trace": [
+              "new Method (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "addCorsOptions (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:92:17)",
+              "new CdkPocStack (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:87:9)",
+              "Object.<anonymous> (C:\\development\\projects\\api-cors-lambda-crud-dynamodb\\index.js:121:14)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
               "Module.load (internal/modules/cjs/loader.js:653:32)",
