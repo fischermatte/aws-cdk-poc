@@ -7,6 +7,7 @@ export class CdkPocStack extends Stack {
   constructor(app: App, id: string) {
     super(app, id);
 
+    // DYNAMO DB
     const dynamoTable = new Table(this, `${id}-items`, {
       partitionKey: {
         name: 'itemId',
@@ -20,6 +21,7 @@ export class CdkPocStack extends Stack {
       removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
     });
 
+    // LAMBDA
     const getOneLambda = new Function(this, 'getOneItemFunction', {
       code: new AssetCode('src'),
       handler: 'get-one.handler',
@@ -69,13 +71,15 @@ export class CdkPocStack extends Stack {
         PRIMARY_KEY: 'itemId'
       }
     });
-    
+
+    // SECURITY, ACCESS DYNAMODB <-> LAMBDA
     dynamoTable.grantReadWriteData(getAllLambda);
     dynamoTable.grantReadWriteData(getOneLambda);
     dynamoTable.grantReadWriteData(createOne);
     dynamoTable.grantReadWriteData(updateOne);
     dynamoTable.grantReadWriteData(deleteOne);
 
+    // API GATEWAY
     const api = new RestApi(this, `${id}-items-api`, {
       restApiName: `${id}-items`
     });
@@ -130,10 +134,11 @@ export function addCorsOptions(apiResource: IResource) {
 }
 
 const app = new App();
-const dev = new CdkPocStack(app, 'cdk-poc-dev');
+// Tag.add(dev, "cdk-poc", "cdk-poc");
+// Tag.add(dev, "cdk-poc-dev", "cdk-poc-dev");
+// const dev = new CdkPocStack(app, 'cdk-poc-dev');
 const prod = new CdkPocStack(app, 'cdk-poc-prod');
-Tag.add(dev, "cdk-poc", "cdk-poc");
-Tag.add(dev, "cdk-poc-dev", "cdk-poc-dev");
 Tag.add(prod, "cdk-poc", "cdk-poc");
 Tag.add(prod, "cdk-poc-prod", "cdk-poc-prod");
+
 app.synth();
