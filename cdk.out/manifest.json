@@ -18,13 +18,13 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4",
-              "id": "ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4",
+              "path": "asset.b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0",
+              "id": "b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0",
               "packaging": "zip",
-              "sourceHash": "ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4",
-              "s3BucketParameter": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3Bucket1BB72862",
-              "s3KeyParameter": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3VersionKey0F46132E",
-              "artifactHashParameter": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4ArtifactHashAB103A54"
+              "sourceHash": "b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0",
+              "s3BucketParameter": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3Bucket40D4FBF4",
+              "s3KeyParameter": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3VersionKey689B018E",
+              "artifactHashParameter": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0ArtifactHash047D79E5"
             },
             "trace": [
               "ConstructNode.addMetadata (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
@@ -183,10 +183,10 @@
             ]
           }
         ],
-        "/cdk-poc-dev/AssetParameters/ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4/S3Bucket": [
+        "/cdk-poc-dev/AssetParameters/b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3Bucket1BB72862",
+            "data": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3Bucket40D4FBF4",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:11:36)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -207,10 +207,10 @@
             ]
           }
         ],
-        "/cdk-poc-dev/AssetParameters/ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4/S3VersionKey": [
+        "/cdk-poc-dev/AssetParameters/b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3VersionKey0F46132E",
+            "data": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3VersionKey689B018E",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:15:35)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -231,10 +231,10 @@
             ]
           }
         ],
-        "/cdk-poc-dev/AssetParameters/ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4/ArtifactHash": [
+        "/cdk-poc-dev/AssetParameters/b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4ArtifactHashAB103A54",
+            "data": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0ArtifactHash047D79E5",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:19:38)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -1087,13 +1087,13 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4",
-              "id": "ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4",
+              "path": "asset.b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0",
+              "id": "b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0",
               "packaging": "zip",
-              "sourceHash": "ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4",
-              "s3BucketParameter": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3Bucket1BB72862",
-              "s3KeyParameter": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3VersionKey0F46132E",
-              "artifactHashParameter": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4ArtifactHashAB103A54"
+              "sourceHash": "b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0",
+              "s3BucketParameter": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3Bucket40D4FBF4",
+              "s3KeyParameter": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3VersionKey689B018E",
+              "artifactHashParameter": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0ArtifactHash047D79E5"
             },
             "trace": [
               "ConstructNode.addMetadata (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
@@ -1252,10 +1252,10 @@
             ]
           }
         ],
-        "/cdk-poc-prod/AssetParameters/ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4/S3Bucket": [
+        "/cdk-poc-prod/AssetParameters/b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3Bucket1BB72862",
+            "data": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3Bucket40D4FBF4",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:11:36)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -1276,10 +1276,10 @@
             ]
           }
         ],
-        "/cdk-poc-prod/AssetParameters/ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4/S3VersionKey": [
+        "/cdk-poc-prod/AssetParameters/b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4S3VersionKey0F46132E",
+            "data": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0S3VersionKey689B018E",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:15:35)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
@@ -1300,10 +1300,10 @@
             ]
           }
         ],
-        "/cdk-poc-prod/AssetParameters/ab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4/ArtifactHash": [
+        "/cdk-poc-prod/AssetParameters/b6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersab1657aa9a8c4a61450485ef0d0cf7b0044c73f1f7981ba00a3bf105a2d806f4ArtifactHashAB103A54",
+            "data": "AssetParametersb6ec0ba901620a697090cbb2e32074682b54b6984b3c482c7ffaab68a2da00b0ArtifactHash047D79E5",
             "trace": [
               "new FileAssetParameters (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:19:38)",
               "CdkPocStack.addFileAsset (C:\\development\\projects\\aws\\aws-cdk-poc\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
