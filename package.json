@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "deploy:prod": "npm run build && cdk deploy cdk-poc-prod",
     "watch": "tsc -w",
     "cdk": "cdk"
   },
@@ -15,12 +16,14 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^10.17.0",
+    "@types/uuid": "^7.0.3",
     "typescript": "~3.7.2"
   },
   "dependencies": {
     "@aws-cdk/aws-apigateway": "*",
     "@aws-cdk/aws-dynamodb": "*",
     "@aws-cdk/aws-lambda": "*",
-    "@aws-cdk/core": "*"
+    "@aws-cdk/core": "*",
+    "aws-sdk": "^2.669.0"
   }
 }
