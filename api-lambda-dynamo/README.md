@@ -46,7 +46,7 @@ The whole component contains:
 
 ## CDK Toolkit
 
-The [`cdk.json`](./cdk.json) file in the root of this repository includes
+The [`cdk.json`](cdk.json) file in the root of this repository includes
 instructions for the CDK toolkit on how to execute this program.
 
 After building your TypeScript code, you will be able to run the CDK toolkits commands as usual:

@@ -4,9 +4,9 @@
   "description": "Running an API Gateway with four Lambdas to do CRUD operations on DynamoDB",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "../node_modules/.bin/tsc",
     "deploy:prod": "npm run build && cdk deploy cdk-poc-prod",
-    "watch": "tsc -w",
+    "watch": "../node_modules/.bin/tsc -w",
     "cdk": "cdk"
   },
   "author": {
