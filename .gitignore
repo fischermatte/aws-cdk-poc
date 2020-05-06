@@ -3,3 +3,4 @@
 /src/*.js
 /index.js
 /.idea/
+/cdk.out/
