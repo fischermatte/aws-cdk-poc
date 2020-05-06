@@ -23,11 +23,11 @@ export const handler = async (event: any = {}) : Promise <any> => {
 
   try {
     await db.put(params).promise();
-    return { statusCode: 201, body: '' };
+    return { statusCode: 201, body: JSON.stringify({ })};
   } catch (dbError) {
     console.error(`failed to save item ${JSON.stringify(params)}`)
     const errorResponse = dbError.code === 'ValidationException' && dbError.message.includes('reserved keyword') ?
     DYNAMODB_EXECUTION_ERROR : RESERVED_RESPONSE;
-    return { statusCode: 500, body: errorResponse };
+    return { statusCode: 500, body: {error: JSON.stringify(errorResponse)} };
   }
 };
