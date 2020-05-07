@@ -1,0 +1,12 @@
+###
+
+POST https://kbvgkzuoizcclausetmcexr5im.appsync-api.eu-west-1.amazonaws.com/graphql
+Content-Type: application/graphq
+x-api-key: da2-3hlz7jyjxrcblijf4z7fxh43ay
+
+{
+  "query": "query { all(limit: 10, nextToken: \"\") { items { itemsId, name } } }"
+}
+
+###
+

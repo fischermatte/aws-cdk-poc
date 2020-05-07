@@ -2,6 +2,7 @@ import cdk = require('@aws-cdk/core');
 import { CfnGraphQLApi, CfnApiKey, CfnGraphQLSchema, CfnDataSource, CfnResolver } from '@aws-cdk/aws-appsync';
 import { Table, AttributeType, StreamViewType, BillingMode } from '@aws-cdk/aws-dynamodb';
 import { Role, ServicePrincipal, ManagedPolicy } from '@aws-cdk/aws-iam';
+import {Tag} from "@aws-cdk/core";
 
 
 export class AppSyncCdkStack extends cdk.Stack {
@@ -147,4 +148,5 @@ export class AppSyncCdkStack extends cdk.Stack {
 
 const app = new cdk.App();
 new AppSyncCdkStack(app, 'AppSyncGraphQLDynamoDBExample');
+Tag.add(app, "cdk-poc", "cdk-poc");
 app.synth();
