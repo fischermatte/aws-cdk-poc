@@ -21,6 +21,10 @@
     "@aws-cdk/aws-appsync": "*",
     "@aws-cdk/aws-dynamodb": "*",
     "@aws-cdk/aws-iam": "*",
-    "@aws-cdk/core": "*"
+    "@aws-cdk/aws-lambda-event-sources": "^1.37.0",
+    "@aws-cdk/core": "*",
+    "aws-appsync": "^3.0.3",
+    "aws-appsync-auth-link": "^2.0.2",
+    "aws-sdk": "^2.669.0"
   }
 }

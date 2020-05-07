@@ -3,14 +3,18 @@ import { CfnGraphQLApi, CfnApiKey, CfnGraphQLSchema, CfnDataSource, CfnResolver 
 import { Table, AttributeType, StreamViewType, BillingMode } from '@aws-cdk/aws-dynamodb';
 import { Role, ServicePrincipal, ManagedPolicy } from '@aws-cdk/aws-iam';
 import {Tag} from "@aws-cdk/core";
+import { readFileSync } from 'fs';
+import {AssetCode, Function, Runtime, StartingPosition} from '@aws-cdk/aws-lambda';
+import {DynamoEventSource} from '@aws-cdk/aws-lambda-event-sources';
+import {DynamoEventSourceProps} from "@aws-cdk/aws-lambda-event-sources/lib/dynamodb";
+
+const schemaDefinition = readFileSync('./items.graphql', 'utf-8');
 
 
 export class AppSyncCdkStack extends cdk.Stack {
 
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-
-    const tableName = 'items'
 
     const itemsGraphQLApi = new CfnGraphQLApi(this, 'ItemsApi', {
       name: 'items-api',
@@ -23,32 +27,13 @@ export class AppSyncCdkStack extends cdk.Stack {
 
     const apiSchema = new CfnGraphQLSchema(this, 'ItemsSchema', {
       apiId: itemsGraphQLApi.attrApiId,
-      definition: `type ${tableName} {
-        ${tableName}Id: ID!
-        name: String
-      }
-      type Paginated${tableName} {
-        items: [${tableName}!]!
-        nextToken: String
-      }
-      type Query {
-        all(limit: Int, nextToken: String): Paginated${tableName}!
-        getOne(${tableName}Id: ID!): ${tableName}
-      }
-      type Mutation {
-        save(name: String!): ${tableName}
-        delete(${tableName}Id: ID!): ${tableName}
-      }
-      type Schema {
-        query: Query
-        mutation: Mutation
-      }`
+      definition: schemaDefinition
     });
 
     const itemsTable = new Table(this, 'ItemsTable', {
-      tableName: tableName,
+      tableName: `${id}-items`,
       partitionKey: {
-        name: `${tableName}Id`,
+        name: `itemId`,
         type: AttributeType.STRING
       },
       billingMode: BillingMode.PAY_PER_REQUEST,
@@ -65,6 +50,26 @@ export class AppSyncCdkStack extends cdk.Stack {
     });
 
     itemsTableRole.addManagedPolicy(ManagedPolicy.fromAwsManagedPolicyName('AmazonDynamoDBFullAccess'));
+
+    const itemChangedFunction = new Function(this, 'itemChangedFunction', {
+      code: new AssetCode('src'),
+      handler: 'item-changed.handler',
+      runtime: Runtime.NODEJS_10_X,
+      environment: {
+        REGION: this.region,
+        TABLE_NAME: itemsTable.tableName,
+        PRIMARY_KEY: 'itemId'
+      }
+    });
+
+    itemChangedFunction.addEventSource(new DynamoEventSource(itemsTable, {
+      startingPosition: StartingPosition.TRIM_HORIZON,
+      batchSize: 5,
+      bisectBatchOnError: true,
+      retryAttempts: 10
+    } as DynamoEventSourceProps))
+
+    itemsTable.grantReadWriteData(itemChangedFunction);
 
     const dataSource = new CfnDataSource(this, 'ItemsDataSource', {
       apiId: itemsGraphQLApi.attrApiId,
@@ -86,7 +91,7 @@ export class AppSyncCdkStack extends cdk.Stack {
         "version": "2017-02-28",
         "operation": "GetItem",
         "key": {
-          "${tableName}Id": $util.dynamodb.toDynamoDBJson($ctx.args.${tableName}Id)
+          "itemId": $util.dynamodb.toDynamoDBJson($ctx.args.itemId)
         }
       }`,
       responseMappingTemplate: `$util.toJson($ctx.result)`
@@ -117,7 +122,7 @@ export class AppSyncCdkStack extends cdk.Stack {
         "version": "2017-02-28",
         "operation": "PutItem",
         "key": {
-          "${tableName}Id": { "S": "$util.autoId()" }
+          "itemId": { "S": "$util.autoId()" }
         },
         "attributeValues": {
           "name": $util.dynamodb.toDynamoDBJson($ctx.args.name)
@@ -136,17 +141,36 @@ export class AppSyncCdkStack extends cdk.Stack {
         "version": "2017-02-28",
         "operation": "DeleteItem",
         "key": {
-          "${tableName}Id": $util.dynamodb.toDynamoDBJson($ctx.args.${tableName}Id)
+          "itemId": $util.dynamodb.toDynamoDBJson($ctx.args.itemId)
         }
       }`,
       responseMappingTemplate: `$util.toJson($ctx.result)`
     });
     deleteResolver.addDependsOn(apiSchema);
 
+    // const publishChangeResolver = new CfnResolver(this, 'PublishChangeMutationResolver', {
+    //   apiId: itemsGraphQLApi.attrApiId,
+    //   typeName: 'Mutation',
+    //   fieldName: 'publishChange',
+    //   dataSourceName: dataSource.name,
+    //   requestMappingTemplate: `{
+    //     "version": "2017-02-28",
+    //     "operation": "PutItem",
+    //     "key": {
+    //       "${tableName}Id": { "S": "$util.autoId()" }
+    //     },
+    //     "attributeValues": {
+    //       "name": $util.dynamodb.toDynamoDBJson($ctx.args.name)
+    //     }
+    //   }`,
+    //   responseMappingTemplate: `$util.toJson($ctx.result)`
+    // });
+    // publishChangeResolver.addDependsOn(apiSchema);
+
   }
 }
 
 const app = new cdk.App();
-new AppSyncCdkStack(app, 'AppSyncGraphQLDynamoDBExample');
+new AppSyncCdkStack(app, 'cdk-poc-appsync');
 Tag.add(app, "cdk-poc", "cdk-poc");
 app.synth();

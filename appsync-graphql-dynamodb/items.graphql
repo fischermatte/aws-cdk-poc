@@ -1,0 +1,30 @@
+type Item {
+    itemId: ID!
+    name: String
+}
+
+type PaginatedItem {
+    items: [Item!]!
+    nextToken: String
+}
+
+type Query {
+    all(limit: Int, nextToken: String): PaginatedItem!
+    getOne(itemId: ID!): Item
+}
+
+type Mutation {
+    save(name: String!): Item
+    delete(itemId: ID!): Item
+    publishChange(itemId: String!): Item
+}
+
+type Subscription {
+    onItemChanged: Item
+    @aws_subscribe(mutations: ["publishChange"])
+}
+
+type Schema {
+    query: Query
+    mutation: Mutation
+}
