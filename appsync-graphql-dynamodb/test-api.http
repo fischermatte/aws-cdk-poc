@@ -1,12 +1,23 @@
 ###
 
-POST https://kbvgkzuoizcclausetmcexr5im.appsync-api.eu-west-1.amazonaws.com/graphql
+POST https://ux74lyar6vatnn6wwrmrsskf3a.appsync-api.eu-west-1.amazonaws.com/graphql
 Content-Type: application/graphq
-x-api-key: da2-3hlz7jyjxrcblijf4z7fxh43ay
+x-api-key: da2-3t2zfzibazet3oql2zekt4n534
 
 {
-  "query": "query { all(limit: 10, nextToken: \"\") { items { itemsId, name } } }"
+  "query": "query { all(limit: 10, nextToken: \"\") { items { itemId, name } } }"
 }
 
 ###
+
+POST https://ux74lyar6vatnn6wwrmrsskf3a.appsync-api.eu-west-1.amazonaws.com/graphql
+Content-Type: application/graphq
+x-api-key: da2-3t2zfzibazet3oql2zekt4n534
+
+{
+  "query": "mutation { save(name: \"Georg\") { items { itemId, name } } }"
+}
+
+###
+
 
