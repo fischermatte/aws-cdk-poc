@@ -64,7 +64,7 @@ export class AppSyncCdkStack extends cdk.Stack {
 
     itemChangedFunction.addEventSource(new DynamoEventSource(itemsTable, {
       startingPosition: StartingPosition.TRIM_HORIZON,
-      batchSize: 5,
+      batchSize: 1,
       bisectBatchOnError: true,
       retryAttempts: 10
     } as DynamoEventSourceProps))

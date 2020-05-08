@@ -16,7 +16,7 @@ type Query {
 type Mutation {
     save(name: String!): Item
     delete(itemId: ID!): Item
-    publishChange(itemId: String!): Item
+    publishChange(itemId: ID!): Item
 }
 
 type Subscription {
