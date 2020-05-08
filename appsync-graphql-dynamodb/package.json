@@ -14,7 +14,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/graphql": "^14.5.0",
     "@types/node": "^10.17.0",
     "typescript": "~3.7.2"
   },
@@ -22,12 +21,13 @@
     "@aws-cdk/aws-appsync": "^1.38.0",
     "@aws-cdk/aws-dynamodb": "^1.38.0",
     "@aws-cdk/aws-iam": "^1.38.0",
-    "@aws-cdk/aws-lambda-event-sources": "^1.37.0",
-    "@aws-cdk/core": "*",
+    "@aws-cdk/aws-lambda-event-sources": "^1.38.0",
+    "@aws-cdk/core": "^1.38.0",
     "@redux-offline/redux-offline": "^2.5.2",
-    "aws-appsync": "^3.0.3",
-    "aws-appsync-auth-link": "^2.0.2",
-    "aws-sdk": "^2.669.0",
+    "apollo-link": "1.2.3",
+    "aws-appsync": "3.0.2",
+    "aws-appsync-auth-link": "2.0.1",
+    "aws-sdk": "^2.672.0",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3"
   }

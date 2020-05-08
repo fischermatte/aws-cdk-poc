@@ -16,6 +16,11 @@
         "inlineSources": true,
         "experimentalDecorators": true,
         "strictPropertyInitialization":false,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./typings"
+
+        ]
     }
 }
 

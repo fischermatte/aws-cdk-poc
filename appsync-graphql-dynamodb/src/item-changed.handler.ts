@@ -6,7 +6,7 @@
 
 import * as AWS from 'aws-sdk/global'
 import {AWSAppSyncClient} from "aws-appsync/lib";
-import {AuthOptions} from 'aws-appsync-auth-link';
+import {AuthOptions} from 'aws-appsync-auth-link/lib';
 import {AWSAppSyncClientOptions} from "aws-appsync/lib/client";
 import gql from 'graphql-tag';
 import DynamoDBStreams = require("aws-sdk/clients/dynamodbstreams");
