@@ -5,3 +5,4 @@
 /cdk.out/
 /**/node_modules/
 *.js
+/appsync-graphql-dynamodb/cdk.out/
