@@ -1,6 +1,6 @@
 import cdk = require('@aws-cdk/core');
 import {CfnApiKey, CfnDataSource, CfnGraphQLApi, CfnGraphQLSchema, CfnResolver} from '@aws-cdk/aws-appsync';
-import {AttributeType, BillingMode, StreamViewType, Table} from '@aws-cdk/aws-dynamodb';
+import {AttributeType, BillingMode, ProjectionType, StreamViewType, Table} from '@aws-cdk/aws-dynamodb';
 import {ManagedPolicy, Role, ServicePrincipal} from '@aws-cdk/aws-iam';
 import {Tag} from "@aws-cdk/core";
 import {readFileSync} from 'fs';
@@ -36,10 +36,10 @@ export class AppSyncCdkStack extends cdk.Stack {
         name: `itemId`,
         type: AttributeType.STRING
       },
-      // sortKey: {
-      //   name: 'name',
-      //   type: AttributeType.STRING
-      // },
+      sortKey: {
+        name: 'name',
+        type: AttributeType.STRING
+      },
       billingMode: BillingMode.PAY_PER_REQUEST,
       stream: StreamViewType.NEW_IMAGE,
 
@@ -48,6 +48,38 @@ export class AppSyncCdkStack extends cdk.Stack {
       // DESTROY, cdk destroy will delete the table (even if it has data in it)
       removalPolicy: cdk.RemovalPolicy.DESTROY, // NOT recommended for production code
     });
+
+    itemsTable.addLocalSecondaryIndex({
+      projectionType:ProjectionType.ALL,
+      indexName: 'price-local-index',
+      sortKey: {
+        name: 'price',
+        type: AttributeType.NUMBER
+      }
+    })
+
+    // itemsTable.addLocalSecondaryIndex({
+    //   projectionType:ProjectionType.ALL,
+    //   indexName: 'description-local-index',
+    //   sortKey: {
+    //     name: 'description',
+    //     type: AttributeType.STRING
+    //   }
+    // })
+
+    // itemsTable.addGlobalSecondaryIndex({
+    //   indexName: 'name-global-index',
+    //   partitionKey: {
+    //     type: AttributeType.STRING,
+    //     name: 'name'
+    //   },
+    //   projectionType: ProjectionType.ALL,
+    //   sortKey: {
+    //     type: AttributeType.STRING,
+    //     name: 'name'
+    //   }
+    //
+    // })
 
     const itemsTableRole = new Role(this, 'ItemsDynamoDBRole', {
       assumedBy: new ServicePrincipal('appsync.amazonaws.com')

@@ -1,0 +1,530 @@
+{
+  "Resources": {
+    "ItemsApi": {
+      "Type": "AWS::AppSync::GraphQLApi",
+      "Properties": {
+        "AuthenticationType": "API_KEY",
+        "Name": "items-api",
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/ItemsApi"
+      }
+    },
+    "ItemsApiKey": {
+      "Type": "AWS::AppSync::ApiKey",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ItemsApi",
+            "ApiId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/ItemsApiKey"
+      }
+    },
+    "ItemsSchema": {
+      "Type": "AWS::AppSync::GraphQLSchema",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ItemsApi",
+            "ApiId"
+          ]
+        },
+        "Definition": "input MetaInput {\r\n    text1: String,\r\n    text2: String\r\n}\r\n\r\ninput ItemInput {\r\n    itemId: ID!\r\n    name: String,\r\n    price: Float,\r\n    description: String,\r\n    meta: MetaInput\r\n}\r\n\r\ntype Item {\r\n    itemId: ID!\r\n    name: String\r\n    price: Float,\r\n    description: String,\r\n    meta: Meta\r\n}\r\n\r\ntype Meta {\r\n    text1: String,\r\n    text2: String\r\n}\r\n\r\n\r\ntype PaginatedItem {\r\n    items: [Item!]!\r\n    nextToken: String\r\n}\r\n\r\ntype Query {\r\n    all(limit: Int, nextToken: String): PaginatedItem!\r\n    getOne(itemId: ID!): Item\r\n}\r\n\r\ntype Mutation {\r\n    save(item: ItemInput!): Item\r\n    delete(itemId: ID!): Item\r\n    publishChange(itemId: ID!): Item\r\n}\r\n\r\ntype Subscription {\r\n    onItemChanged: Item\r\n    @aws_subscribe(mutations: [\"publishChange\"])\r\n}\r\n\r\ntype Schema {\r\n    query: Query\r\n    mutation: Mutation\r\n}\r\n"
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/ItemsSchema"
+      }
+    },
+    "ItemsTable5AAC2C46": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "KeySchema": [
+          {
+            "AttributeName": "itemId",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "name",
+            "KeyType": "RANGE"
+          }
+        ],
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "itemId",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "name",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "price",
+            "AttributeType": "N"
+          },
+          {
+            "AttributeName": "description",
+            "AttributeType": "S"
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "LocalSecondaryIndexes": [
+          {
+            "IndexName": "price-local-index",
+            "KeySchema": [
+              {
+                "AttributeName": "itemId",
+                "KeyType": "HASH"
+              },
+              {
+                "AttributeName": "price",
+                "KeyType": "RANGE"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            }
+          },
+          {
+            "IndexName": "description-local-index",
+            "KeySchema": [
+              {
+                "AttributeName": "itemId",
+                "KeyType": "HASH"
+              },
+              {
+                "AttributeName": "description",
+                "KeyType": "RANGE"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            }
+          }
+        ],
+        "StreamSpecification": {
+          "StreamViewType": "NEW_IMAGE"
+        },
+        "TableName": "cdk-poc-appsync-items",
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/ItemsTable/Resource"
+      }
+    },
+    "ItemsDynamoDBRole7D2E3F6D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "appsync.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AmazonDynamoDBFullAccess"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/ItemsDynamoDBRole/Resource"
+      }
+    },
+    "itemChangedFunctionServiceRole90DCE9B6": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/itemChangedFunction/ServiceRole/Resource"
+      }
+    },
+    "itemChangedFunctionServiceRoleDefaultPolicy6648DD35": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "dynamodb:ListStreams",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "ItemsTable5AAC2C46",
+                        "Arn"
+                      ]
+                    },
+                    "/stream/*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "ItemsTable5AAC2C46",
+                  "StreamArn"
+                ]
+              }
+            },
+            {
+              "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "ItemsTable5AAC2C46",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "ItemsTable5AAC2C46",
+                          "Arn"
+                        ]
+                      },
+                      "/index/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "itemChangedFunctionServiceRoleDefaultPolicy6648DD35",
+        "Roles": [
+          {
+            "Ref": "itemChangedFunctionServiceRole90DCE9B6"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/itemChangedFunction/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "itemChangedFunctionC5F579B3": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3Bucket34DDFB22"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3VersionKey8AE66FF5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3VersionKey8AE66FF5"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "item-changed.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "itemChangedFunctionServiceRole90DCE9B6",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Environment": {
+          "Variables": {
+            "REGION": {
+              "Ref": "AWS::Region"
+            },
+            "TABLE_NAME": {
+              "Ref": "ItemsTable5AAC2C46"
+            },
+            "PRIMARY_KEY": "itemId"
+          }
+        },
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "DependsOn": [
+        "itemChangedFunctionServiceRoleDefaultPolicy6648DD35",
+        "itemChangedFunctionServiceRole90DCE9B6"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/itemChangedFunction/Resource",
+        "aws:asset:path": "asset.875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a",
+        "aws:asset:property": "Code"
+      }
+    },
+    "itemChangedFunctionDynamoDBEventSourcecdkpocappsyncItemsTable32E0443A6BED1459": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "Properties": {
+        "EventSourceArn": {
+          "Fn::GetAtt": [
+            "ItemsTable5AAC2C46",
+            "StreamArn"
+          ]
+        },
+        "FunctionName": {
+          "Ref": "itemChangedFunctionC5F579B3"
+        },
+        "BatchSize": 1,
+        "BisectBatchOnFunctionError": true,
+        "MaximumRetryAttempts": 10,
+        "StartingPosition": "TRIM_HORIZON"
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/itemChangedFunction/DynamoDBEventSource:cdkpocappsyncItemsTable32E0443A/Resource"
+      }
+    },
+    "ItemsDataSource": {
+      "Type": "AWS::AppSync::DataSource",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ItemsApi",
+            "ApiId"
+          ]
+        },
+        "Name": "ItemsDynamoDataSource",
+        "Type": "AMAZON_DYNAMODB",
+        "DynamoDBConfig": {
+          "AwsRegion": {
+            "Ref": "AWS::Region"
+          },
+          "TableName": {
+            "Ref": "ItemsTable5AAC2C46"
+          }
+        },
+        "ServiceRoleArn": {
+          "Fn::GetAtt": [
+            "ItemsDynamoDBRole7D2E3F6D",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/ItemsDataSource"
+      }
+    },
+    "GetOneQueryResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ItemsApi",
+            "ApiId"
+          ]
+        },
+        "FieldName": "getOne",
+        "TypeName": "Query",
+        "DataSourceName": "ItemsDynamoDataSource",
+        "RequestMappingTemplate": "{\n        \"version\": \"2017-02-28\",\n        \"operation\": \"GetItem\",\n        \"key\": {\n          \"itemId\": $util.dynamodb.toDynamoDBJson($ctx.args.itemId)\n        }\n      }",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result)"
+      },
+      "DependsOn": [
+        "ItemsSchema"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/GetOneQueryResolver"
+      }
+    },
+    "GetAllQueryResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ItemsApi",
+            "ApiId"
+          ]
+        },
+        "FieldName": "all",
+        "TypeName": "Query",
+        "DataSourceName": "ItemsDynamoDataSource",
+        "RequestMappingTemplate": "{\n        \"version\": \"2017-02-28\",\n        \"operation\": \"Scan\",\n        \"limit\": $util.defaultIfNull($ctx.args.limit, 20),\n        \"nextToken\": $util.toJson($util.defaultIfNullOrEmpty($ctx.args.nextToken, null))\n      }",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result)"
+      },
+      "DependsOn": [
+        "ItemsSchema"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/GetAllQueryResolver"
+      }
+    },
+    "SaveMutationResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ItemsApi",
+            "ApiId"
+          ]
+        },
+        "FieldName": "save",
+        "TypeName": "Mutation",
+        "DataSourceName": "ItemsDynamoDataSource",
+        "RequestMappingTemplate": "{\n        \"version\": \"2017-02-28\",\n        \"operation\": \"PutItem\",\n        \"key\": {\n          \"itemId\": { \"S\": \"$ctx.args.item.itemId\" }\n        },\n        \"attributeValues\": $util.dynamodb.toMapValuesJson($ctx.args.item)\n      }",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result)"
+      },
+      "DependsOn": [
+        "ItemsSchema"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/SaveMutationResolver"
+      }
+    },
+    "DeleteMutationResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ItemsApi",
+            "ApiId"
+          ]
+        },
+        "FieldName": "delete",
+        "TypeName": "Mutation",
+        "DataSourceName": "ItemsDynamoDataSource",
+        "RequestMappingTemplate": "{\n        \"version\": \"2017-02-28\",\n        \"operation\": \"DeleteItem\",\n        \"key\": {\n          \"itemId\": $util.dynamodb.toDynamoDBJson($ctx.args.itemId)\n        }\n      }",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result)"
+      },
+      "DependsOn": [
+        "ItemsSchema"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "cdk-poc-appsync/DeleteMutationResolver"
+      }
+    }
+  },
+  "Parameters": {
+    "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3Bucket34DDFB22": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a\""
+    },
+    "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3VersionKey8AE66FF5": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a\""
+    },
+    "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aArtifactHash174DFD21": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a\""
+    }
+  }
+}

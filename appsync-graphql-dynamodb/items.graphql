@@ -7,6 +7,7 @@ input ItemInput {
     itemId: ID!
     name: String,
     price: Float,
+    description: String,
     meta: MetaInput
 }
 
@@ -14,6 +15,7 @@ type Item {
     itemId: ID!
     name: String
     price: Float,
+    description: String,
     meta: Meta
 }
 

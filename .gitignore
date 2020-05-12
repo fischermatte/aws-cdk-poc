@@ -6,4 +6,5 @@
 /**/node_modules/
 *.js
 /appsync-graphql-dynamodb/cdk.out/
+!/appsync-graphql-dynamodb/cdk.out/*template.json
 /appsync-graphql-dynamodb/rest-client.env.json
