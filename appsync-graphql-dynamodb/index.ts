@@ -1,9 +1,9 @@
 import cdk = require('@aws-cdk/core');
-import { CfnGraphQLApi, CfnApiKey, CfnGraphQLSchema, CfnDataSource, CfnResolver } from '@aws-cdk/aws-appsync';
-import { Table, AttributeType, StreamViewType, BillingMode } from '@aws-cdk/aws-dynamodb';
-import { Role, ServicePrincipal, ManagedPolicy } from '@aws-cdk/aws-iam';
+import {CfnApiKey, CfnDataSource, CfnGraphQLApi, CfnGraphQLSchema, CfnResolver} from '@aws-cdk/aws-appsync';
+import {AttributeType, BillingMode, StreamViewType, Table} from '@aws-cdk/aws-dynamodb';
+import {ManagedPolicy, Role, ServicePrincipal} from '@aws-cdk/aws-iam';
 import {Tag} from "@aws-cdk/core";
-import { readFileSync } from 'fs';
+import {readFileSync} from 'fs';
 import {AssetCode, Function, Runtime, StartingPosition} from '@aws-cdk/aws-lambda';
 import {DynamoEventSource} from '@aws-cdk/aws-lambda-event-sources';
 import {DynamoEventSourceProps} from "@aws-cdk/aws-lambda-event-sources/lib/dynamodb";
@@ -36,6 +36,10 @@ export class AppSyncCdkStack extends cdk.Stack {
         name: `itemId`,
         type: AttributeType.STRING
       },
+      // sortKey: {
+      //   name: 'name',
+      //   type: AttributeType.STRING
+      // },
       billingMode: BillingMode.PAY_PER_REQUEST,
       stream: StreamViewType.NEW_IMAGE,
 
@@ -122,11 +126,9 @@ export class AppSyncCdkStack extends cdk.Stack {
         "version": "2017-02-28",
         "operation": "PutItem",
         "key": {
-          "itemId": { "S": "$util.autoId()" }
+          "itemId": { "S": "$ctx.args.item.itemId" }
         },
-        "attributeValues": {
-          "name": $util.dynamodb.toDynamoDBJson($ctx.args.name)
-        }
+        "attributeValues": $util.dynamodb.toMapValuesJson($ctx.args.item)
       }`,
       responseMappingTemplate: `$util.toJson($ctx.result)`
     });
