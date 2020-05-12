@@ -70,10 +70,6 @@
           {
             "AttributeName": "price",
             "AttributeType": "N"
-          },
-          {
-            "AttributeName": "description",
-            "AttributeType": "S"
           }
         ],
         "BillingMode": "PAY_PER_REQUEST",
@@ -87,22 +83,6 @@
               },
               {
                 "AttributeName": "price",
-                "KeyType": "RANGE"
-              }
-            ],
-            "Projection": {
-              "ProjectionType": "ALL"
-            }
-          },
-          {
-            "IndexName": "description-local-index",
-            "KeySchema": [
-              {
-                "AttributeName": "itemId",
-                "KeyType": "HASH"
-              },
-              {
-                "AttributeName": "description",
                 "KeyType": "RANGE"
               }
             ],
