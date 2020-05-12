@@ -73,6 +73,24 @@
           }
         ],
         "BillingMode": "PAY_PER_REQUEST",
+        "GlobalSecondaryIndexes": [
+          {
+            "IndexName": "name-global-index",
+            "KeySchema": [
+              {
+                "AttributeName": "name",
+                "KeyType": "HASH"
+              },
+              {
+                "AttributeName": "price",
+                "KeyType": "RANGE"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            }
+          }
+        ],
         "LocalSecondaryIndexes": [
           {
             "IndexName": "price-local-index",

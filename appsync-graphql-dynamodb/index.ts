@@ -67,19 +67,19 @@ export class AppSyncCdkStack extends cdk.Stack {
     //   }
     // })
 
-    // itemsTable.addGlobalSecondaryIndex({
-    //   indexName: 'name-global-index',
-    //   partitionKey: {
-    //     type: AttributeType.STRING,
-    //     name: 'name'
-    //   },
-    //   projectionType: ProjectionType.ALL,
-    //   sortKey: {
-    //     type: AttributeType.STRING,
-    //     name: 'name'
-    //   }
-    //
-    // })
+    itemsTable.addGlobalSecondaryIndex({
+      indexName: 'name-global-index',
+      partitionKey: {
+        type: AttributeType.STRING,
+        name: 'name'
+      },
+      projectionType: ProjectionType.ALL,
+      sortKey: {
+        type: AttributeType.NUMBER,
+        name: 'price'
+      }
+
+    })
 
     const itemsTableRole = new Role(this, 'ItemsDynamoDBRole', {
       assumedBy: new ServicePrincipal('appsync.amazonaws.com')
