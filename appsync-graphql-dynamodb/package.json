@@ -31,7 +31,6 @@
     "aws-appsync-auth-link": "2.0.1",
     "aws-sdk": "^2.672.0",
     "graphql": "^15.0.0",
-    "graphql-tag": "^2.10.3",
-    "node-fetch": "^2.6.0"
+    "graphql-tag": "^2.10.3"
   }
 }

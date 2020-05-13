@@ -7,11 +7,12 @@ import gql from 'graphql-tag';
 (global as any).fetch = require("node-fetch");
 
 export const handler = async (event: any, context: any, callback: any): Promise<any> => {
+    console.info(`Processing event ${JSON.stringify(event)}`);
     const records: DynamoDBStreams.Record[] = event.Records;
 
     const client = await graphqlClient().hydrated();
     for (const record of records) {
-        console.info(`Processing JSON ${JSON.stringify(event)}`);
+        console.info(`Processing Record ${JSON.stringify(record)}`);
         console.info(`Context ${JSON.stringify(context)}`);
         console.info('DynamoDB Record: %j', record.dynamodb);
 
@@ -36,7 +37,7 @@ export const handler = async (event: any, context: any, callback: any): Promise<
 };
 
 function graphqlClient(): AWSAppSyncClient<any> {
-    console.info('creating appsync client...');
+    console.info(`creating client with config ${JSON.stringify(AWS.config)}`);
     return new AWSAppSyncClient({
         url: 'https://3hxvchs2vnduff7p3sq7eqme44.appsync-api.eu-west-1.amazonaws.com/graphql',
         region: process.env.REGION as string,
