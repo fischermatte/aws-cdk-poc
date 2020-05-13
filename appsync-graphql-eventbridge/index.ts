@@ -127,7 +127,7 @@ export class AppSyncCdkStack extends cdk.Stack {
         //   eventBusName: "CdkPocEventBus"
         // });
 
-        new CfnRegistry(this, "PocEventRegistry", {
+        new CfnRegistry(this, "CdkPocRegistry", {
             registryName: "CdkPocRegistry"
         })
 

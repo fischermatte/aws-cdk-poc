@@ -252,7 +252,7 @@
         "aws:cdk:path": "AppSyncEventBridge/echoFunction/AllowEventRuleAppSyncEventBridgeAppSyncEventBridgeRleC5E99BED"
       }
     },
-    "PocEventRegistry": {
+    "CdkPocRegistry": {
       "Type": "AWS::EventSchemas::Registry",
       "Properties": {
         "RegistryName": "CdkPocRegistry",
@@ -264,7 +264,7 @@
         ]
       },
       "Metadata": {
-        "aws:cdk:path": "AppSyncEventBridge/PocEventRegistry"
+        "aws:cdk:path": "AppSyncEventBridge/CdkPocRegistry"
       }
     },
     "PocEventSchema": {
