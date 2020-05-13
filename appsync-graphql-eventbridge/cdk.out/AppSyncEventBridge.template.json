@@ -1,0 +1,315 @@
+{
+  "Resources": {
+    "AppSync2EventBridgeApi": {
+      "Type": "AWS::AppSync::GraphQLApi",
+      "Properties": {
+        "AuthenticationType": "API_KEY",
+        "Name": "AppSync2EventBridge-API",
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/AppSync2EventBridgeApi"
+      }
+    },
+    "AppSync2EventBridgeApiKey": {
+      "Type": "AWS::AppSync::ApiKey",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "AppSync2EventBridgeApi",
+            "ApiId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/AppSync2EventBridgeApiKey"
+      }
+    },
+    "EventSchema": {
+      "Type": "AWS::AppSync::GraphQLSchema",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "AppSync2EventBridgeApi",
+            "ApiId"
+          ]
+        },
+        "Definition": "type Event {\n        result: String\n      }\n      \n      type Mutation {\n        putEvent(event: String!): Event\n      }\n      \n      type Query {\n        getEvent: Event\n      }\n      \n      schema {\n        query: Query\n        mutation: Mutation\n      }"
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/EventSchema"
+      }
+    },
+    "AppSyncEventBridgeRoleE2F34FE0": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "appsync.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/AppSyncEventBridgeRole/Resource"
+      }
+    },
+    "AppSyncEventBridgeRoleDefaultPolicyC796B118": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "events:Put*",
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "AppSyncEventBridgeRoleDefaultPolicyC796B118",
+        "Roles": [
+          {
+            "Ref": "AppSyncEventBridgeRoleE2F34FE0"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/AppSyncEventBridgeRole/DefaultPolicy/Resource"
+      }
+    },
+    "ItemsDataSource": {
+      "Type": "AWS::AppSync::DataSource",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "AppSync2EventBridgeApi",
+            "ApiId"
+          ]
+        },
+        "Name": "EventBridgeDataSource",
+        "Type": "HTTP",
+        "HttpConfig": {
+          "AuthorizationConfig": {
+            "AuthorizationType": "AWS_IAM",
+            "AwsIamConfig": {
+              "SigningRegion": {
+                "Ref": "AWS::Region"
+              },
+              "SigningServiceName": "events"
+            }
+          },
+          "Endpoint": {
+            "Fn::Join": [
+              "",
+              [
+                "https://events.",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ".amazonaws.com/"
+              ]
+            ]
+          }
+        },
+        "ServiceRoleArn": {
+          "Fn::GetAtt": [
+            "AppSyncEventBridgeRoleE2F34FE0",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/ItemsDataSource"
+      }
+    },
+    "PutEventMutationResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "AppSync2EventBridgeApi",
+            "ApiId"
+          ]
+        },
+        "FieldName": "putEvent",
+        "TypeName": "Mutation",
+        "DataSourceName": "EventBridgeDataSource",
+        "RequestMappingTemplate": "{\n        \"version\": \"2018-05-29\",\n        \"method\": \"POST\",\n        \"resourcePath\": \"/\",\n        \"params\": {\n          \"headers\": {\n            \"content-type\": \"application/x-amz-json-1.1\",\n            \"x-amz-target\":\"AWSEvents.PutEvents\"\n          },\n          \"body\": {\n            \"Entries\":[ \n              {\n                \"Source\":\"appsync\",\n                \"EventBusName\": \"default\",\n                \"Detail\":\"{ \\\"event\\\": \\\"$ctx.arguments.event\\\"}\",\n                \"DetailType\":\"Event Bridge via GraphQL\"\n               }\n            ]\n          }\n        }a\n      }",
+        "ResponseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n      #if($ctx.error)\n        $util.error($ctx.error.message, $ctx.error.type)\n      #end\n      ## if the response status code is not 200, then return an error. Else return the body **\n      #if($ctx.result.statusCode == 200)\n          ## If response is 200, return the body.\n          {\n            \"result\": \"$util.parseJson($ctx.result.body)\"\n          }\n      #else\n          ## If response is not 200, append the response to error block.\n          $utils.appendError($ctx.result.body, $ctx.result.statusCode)\n      #end"
+      },
+      "DependsOn": [
+        "EventSchema"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/PutEventMutationResolver"
+      }
+    },
+    "echoFunctionServiceRole1EBD6DF0": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/echoFunction/ServiceRole/Resource"
+      }
+    },
+    "echoFunction5207BE9B": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "ZipFile": "exports.handler = (event, context) => { console.log(event); context.succeed(event); }"
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "echoFunctionServiceRole1EBD6DF0",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "DependsOn": [
+        "echoFunctionServiceRole1EBD6DF0"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/echoFunction/Resource"
+      }
+    },
+    "echoFunctionAllowEventRuleAppSyncEventBridgeAppSyncEventBridgeRleC5E99BEDEFA27639": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "echoFunction5207BE9B",
+            "Arn"
+          ]
+        },
+        "Principal": "events.amazonaws.com",
+        "SourceArn": {
+          "Fn::GetAtt": [
+            "AppSyncEventBridgeRle2A25B9B1",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/echoFunction/AllowEventRuleAppSyncEventBridgeAppSyncEventBridgeRleC5E99BED"
+      }
+    },
+    "PocEventRegistry": {
+      "Type": "AWS::EventSchemas::Registry",
+      "Properties": {
+        "RegistryName": "CdkPocRegistry",
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/PocEventRegistry"
+      }
+    },
+    "PocEventSchema": {
+      "Type": "AWS::EventSchemas::Schema",
+      "Properties": {
+        "Content": "{\n  \"openapi\": \"3.0.0\",\n  \"info\": {\n    \"version\": \"1.0.0\",\n    \"title\": \"Event\"\n  },\n  \"paths\": {},\n  \"components\": {\n    \"schemas\": {\n      \"Event\": {\n        \"type\": \"object\",\n        \"required\": [\"orderId\", \"eventType\", \"id\"],\n        \"properties\": {\n          \"eventType\": {\n            \"type\": \"string\"\n          },\n          \"id\": {\n            \"type\": \"string\"\n          },\n          \"orderId\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}",
+        "RegistryName": "CdkPocRegistry",
+        "Type": "OpenApi3",
+        "Description": "Event emitted on domain events",
+        "SchemaName": "DomainEvent",
+        "Tags": [
+          {
+            "Key": "cdk-poc",
+            "Value": "cdk-poc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/PocEventSchema"
+      }
+    },
+    "AppSyncEventBridgeRle2A25B9B1": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "EventPattern": {
+          "source": [
+            "appsync"
+          ]
+        },
+        "State": "ENABLED",
+        "Targets": [
+          {
+            "Arn": {
+              "Fn::GetAtt": [
+                "echoFunction5207BE9B",
+                "Arn"
+              ]
+            },
+            "Id": "Target0"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncEventBridge/AppSyncEventBridgeRle/Resource"
+      }
+    }
+  }
+}

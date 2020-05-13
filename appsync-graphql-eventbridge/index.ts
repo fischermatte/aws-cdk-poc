@@ -1,37 +1,32 @@
 import cdk = require("@aws-cdk/core");
-import {
-  CfnGraphQLApi,
-  CfnApiKey,
-  CfnGraphQLSchema,
-  CfnDataSource,
-  CfnResolver
-} from "@aws-cdk/aws-appsync";
-import { Role, ServicePrincipal, PolicyStatement } from "@aws-cdk/aws-iam";
-import { Rule } from "@aws-cdk/aws-events";
 import lambda = require("@aws-cdk/aws-lambda");
 import targets = require("@aws-cdk/aws-events-targets");
+import {CfnApiKey, CfnDataSource, CfnGraphQLApi, CfnGraphQLSchema, CfnResolver} from "@aws-cdk/aws-appsync";
+import {PolicyStatement, Role, ServicePrincipal} from "@aws-cdk/aws-iam";
+import {Rule} from "@aws-cdk/aws-events";
 import {Tag} from '@aws-cdk/core';
+import {CfnRegistry, CfnSchema} from '@aws-cdk/aws-eventschemas';
 
 export class AppSyncCdkStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+    constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+        super(scope, id, props);
 
-    const appSync2EventBridgeGraphQLApi = new CfnGraphQLApi(
-      this,
-      "AppSync2EventBridgeApi",
-      {
-        name: "AppSync2EventBridge-API",
-        authenticationType: "API_KEY"
-      }
-    );
+        const appSync2EventBridgeGraphQLApi = new CfnGraphQLApi(
+            this,
+            "AppSync2EventBridgeApi",
+            {
+                name: "AppSync2EventBridge-API",
+                authenticationType: "API_KEY"
+            }
+        );
 
-    new CfnApiKey(this, "AppSync2EventBridgeApiKey", {
-      apiId: appSync2EventBridgeGraphQLApi.attrApiId
-    });
+        new CfnApiKey(this, "AppSync2EventBridgeApiKey", {
+            apiId: appSync2EventBridgeGraphQLApi.attrApiId
+        });
 
-    const apiSchema = new CfnGraphQLSchema(this, "EventSchema", {
-      apiId: appSync2EventBridgeGraphQLApi.attrApiId,
-      definition: `type Event {
+        const apiSchema = new CfnGraphQLSchema(this, "EventSchema", {
+            apiId: appSync2EventBridgeGraphQLApi.attrApiId,
+            definition: `type Event {
         result: String
       }
       
@@ -47,42 +42,42 @@ export class AppSyncCdkStack extends cdk.Stack {
         query: Query
         mutation: Mutation
       }`
-    });
+        });
 
-    const appsyncEventBridgeRole = new Role(this, "AppSyncEventBridgeRole", {
-      assumedBy: new ServicePrincipal("appsync.amazonaws.com")
-    });
+        const appsyncEventBridgeRole = new Role(this, "AppSyncEventBridgeRole", {
+            assumedBy: new ServicePrincipal("appsync.amazonaws.com")
+        });
 
-    appsyncEventBridgeRole.addToPolicy(
-      new PolicyStatement({
-        resources: ["*"],
-        actions: ["events:Put*"]
-      })
-    );
+        appsyncEventBridgeRole.addToPolicy(
+            new PolicyStatement({
+                resources: ["*"],
+                actions: ["events:Put*"]
+            })
+        );
 
-    const dataSource = new CfnDataSource(this, "ItemsDataSource", {
-      apiId: appSync2EventBridgeGraphQLApi.attrApiId,
-      name: "EventBridgeDataSource",
-      type: "HTTP",
-      httpConfig: {
-        authorizationConfig: {
-          authorizationType: "AWS_IAM",
-          awsIamConfig: {
-            signingRegion: this.region,
-            signingServiceName: "events"
-          }
-        },
-        endpoint: "https://events." + this.region + ".amazonaws.com/"
-      },
-      serviceRoleArn: appsyncEventBridgeRole.roleArn
-    });
+        const dataSource = new CfnDataSource(this, "ItemsDataSource", {
+            apiId: appSync2EventBridgeGraphQLApi.attrApiId,
+            name: "EventBridgeDataSource",
+            type: "HTTP",
+            httpConfig: {
+                authorizationConfig: {
+                    authorizationType: "AWS_IAM",
+                    awsIamConfig: {
+                        signingRegion: this.region,
+                        signingServiceName: "events"
+                    }
+                },
+                endpoint: "https://events." + this.region + ".amazonaws.com/"
+            },
+            serviceRoleArn: appsyncEventBridgeRole.roleArn
+        });
 
-    const putEventResolver = new CfnResolver(this, "PutEventMutationResolver", {
-      apiId: appSync2EventBridgeGraphQLApi.attrApiId,
-      typeName: "Mutation",
-      fieldName: "putEvent",
-      dataSourceName: dataSource.name,
-      requestMappingTemplate: `{
+        const putEventResolver = new CfnResolver(this, "PutEventMutationResolver", {
+            apiId: appSync2EventBridgeGraphQLApi.attrApiId,
+            typeName: "Mutation",
+            fieldName: "putEvent",
+            dataSourceName: dataSource.name,
+            requestMappingTemplate: `{
         "version": "2018-05-29",
         "method": "POST",
         "resourcePath": "/",
@@ -101,9 +96,9 @@ export class AppSyncCdkStack extends cdk.Stack {
                }
             ]
           }
-        }
+        }a
       }`,
-      responseMappingTemplate: `## Raise a GraphQL field error in case of a datasource invocation error
+            responseMappingTemplate: `## Raise a GraphQL field error in case of a datasource invocation error
       #if($ctx.error)
         $util.error($ctx.error.message, $ctx.error.type)
       #end
@@ -117,24 +112,67 @@ export class AppSyncCdkStack extends cdk.Stack {
           ## If response is not 200, append the response to error block.
           $utils.appendError($ctx.result.body, $ctx.result.statusCode)
       #end`
-    });
-    putEventResolver.addDependsOn(apiSchema);
+        });
+        putEventResolver.addDependsOn(apiSchema);
 
-    const echoLambda = new lambda.Function(this, "echoFunction", {
-      code: lambda.Code.fromInline(
-        "exports.handler = (event, context) => { console.log(event); context.succeed(event); }"
-      ),
-      handler: "index.handler",
-      runtime: lambda.Runtime.NODEJS_10_X
-    });
+        const echoLambda = new lambda.Function(this, "echoFunction", {
+            code: lambda.Code.fromInline(
+                "exports.handler = (event, context) => { console.log(event); context.succeed(event); }"
+            ),
+            handler: "index.handler",
+            runtime: lambda.Runtime.NODEJS_10_X
+        });
 
-    const rule = new Rule(this, "AppSyncEventBridgeRle", {
-      eventPattern: {
-        source: ["appsync"]
+        // const eventBus = new EventBus(this, "CdkPocEventBus", {
+        //   eventBusName: "CdkPocEventBus"
+        // });
+
+        new CfnRegistry(this, "PocEventRegistry", {
+            registryName: "CdkPocRegistry"
+        })
+
+        new CfnSchema(this, "PocEventSchema", {
+            registryName: "CdkPocRegistry",
+            schemaName: "DomainEvent",
+            name: "DomainEvent",
+            type: "OpenApi3",
+            description: "Event emitted on domain events",
+            content: `{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Event"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Event": {
+        "type": "object",
+        "required": ["orderId", "eventType", "id"],
+        "properties": {
+          "eventType": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "orderId": {
+            "type": "string"
+          }
+        }
       }
-    });
-    rule.addTarget(new targets.LambdaFunction(echoLambda));
+    }
   }
+}`
+        } as any);
+
+        const rule = new Rule(this, "AppSyncEventBridgeRle", {
+            eventPattern: {
+                source: ["appsync"]
+            }
+        });
+        rule.addTarget(new targets.LambdaFunction(echoLambda));
+    }
 }
 
 const app = new cdk.App();
