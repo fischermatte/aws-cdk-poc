@@ -10,6 +10,7 @@ import { Role, ServicePrincipal, PolicyStatement } from "@aws-cdk/aws-iam";
 import { Rule } from "@aws-cdk/aws-events";
 import lambda = require("@aws-cdk/aws-lambda");
 import targets = require("@aws-cdk/aws-events-targets");
+import {Tag} from '@aws-cdk/core';
 
 export class AppSyncCdkStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -28,7 +29,7 @@ export class AppSyncCdkStack extends cdk.Stack {
       apiId: appSync2EventBridgeGraphQLApi.attrApiId
     });
 
-    const apiSchema = new CfnGraphQLSchema(this, "ItemsSchema", {
+    const apiSchema = new CfnGraphQLSchema(this, "EventSchema", {
       apiId: appSync2EventBridgeGraphQLApi.attrApiId,
       definition: `type Event {
         result: String
@@ -138,4 +139,5 @@ export class AppSyncCdkStack extends cdk.Stack {
 
 const app = new cdk.App();
 new AppSyncCdkStack(app, "AppSyncEventBridge");
+Tag.add(app, "cdk-poc", "cdk-poc");
 app.synth();

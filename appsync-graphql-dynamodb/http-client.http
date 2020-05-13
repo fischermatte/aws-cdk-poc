@@ -15,7 +15,7 @@ Content-Type: application/graphq
 x-api-key: {{apikey}}
 
 {
-  "query": "mutation { save( item: { itemId: \"itemId-2\", name: \"Georg\", price: 101, meta: { text1: \"huhu\"}}) { itemId } }"
+  "query": "mutation { save( item: { itemId: \"itemId-6\", name: \"Georg3\", price: 101, meta: { text1: \"huhu\"}}) { itemId } }"
 }
 
 ###

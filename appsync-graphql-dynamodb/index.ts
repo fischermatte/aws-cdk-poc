@@ -88,7 +88,7 @@ export class AppSyncCdkStack extends cdk.Stack {
     itemsTableRole.addManagedPolicy(ManagedPolicy.fromAwsManagedPolicyName('AmazonDynamoDBFullAccess'));
 
     const itemChangedFunction = new Function(this, 'itemChangedFunction', {
-      code: new AssetCode('src'),
+      code: new AssetCode('functions'),
       handler: 'item-changed.handler',
       runtime: Runtime.NODEJS_10_X,
       environment: {

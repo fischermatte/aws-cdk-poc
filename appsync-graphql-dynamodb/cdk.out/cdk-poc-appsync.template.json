@@ -39,7 +39,7 @@
             "ApiId"
           ]
         },
-        "Definition": "input MetaInput {\r\n    text1: String,\r\n    text2: String\r\n}\r\n\r\ninput ItemInput {\r\n    itemId: ID!\r\n    name: String,\r\n    price: Float,\r\n    description: String,\r\n    meta: MetaInput\r\n}\r\n\r\ntype Item {\r\n    itemId: ID!\r\n    name: String\r\n    price: Float,\r\n    description: String,\r\n    meta: Meta\r\n}\r\n\r\ntype Meta {\r\n    text1: String,\r\n    text2: String\r\n}\r\n\r\n\r\ntype PaginatedItem {\r\n    items: [Item!]!\r\n    nextToken: String\r\n}\r\n\r\ntype Query {\r\n    all(limit: Int, nextToken: String): PaginatedItem!\r\n    getOne(itemId: ID!): Item\r\n}\r\n\r\ntype Mutation {\r\n    save(item: ItemInput!): Item\r\n    delete(itemId: ID!): Item\r\n    publishChange(itemId: ID!): Item\r\n}\r\n\r\ntype Subscription {\r\n    onItemChanged: Item\r\n    @aws_subscribe(mutations: [\"publishChange\"])\r\n}\r\n\r\ntype Schema {\r\n    query: Query\r\n    mutation: Mutation\r\n}\r\n"
+        "Definition": "input MetaInput {\n    text1: String,\n    text2: String\n}\n\ninput ItemInput {\n    itemId: ID!\n    name: String,\n    price: Float,\n    description: String,\n    meta: MetaInput\n}\n\ntype Item {\n    itemId: ID!\n    name: String\n    price: Float,\n    description: String,\n    meta: Meta\n}\n\ntype Meta {\n    text1: String,\n    text2: String\n}\n\n\ntype PaginatedItem {\n    items: [Item!]!\n    nextToken: String\n}\n\ntype Query {\n    all(limit: Int, nextToken: String): PaginatedItem!\n    getOne(itemId: ID!): Item\n}\n\ntype Mutation {\n    save(item: ItemInput!): Item\n    delete(itemId: ID!): Item\n    publishChange(itemId: ID!): Item\n}\n\ntype Subscription {\n    onItemChanged: Item\n    @aws_subscribe(mutations: [\"publishChange\"])\n}\n\ntype Schema {\n    query: Query\n    mutation: Mutation\n}\n"
       },
       "Metadata": {
         "aws:cdk:path": "cdk-poc-appsync/ItemsSchema"
@@ -299,7 +299,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": {
-            "Ref": "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3Bucket34DDFB22"
+            "Ref": "AssetParameterse5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183S3Bucket553E2548"
           },
           "S3Key": {
             "Fn::Join": [
@@ -312,7 +312,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3VersionKey8AE66FF5"
+                          "Ref": "AssetParameterse5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183S3VersionKey0A546F8F"
                         }
                       ]
                     }
@@ -325,7 +325,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3VersionKey8AE66FF5"
+                          "Ref": "AssetParameterse5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183S3VersionKey0A546F8F"
                         }
                       ]
                     }
@@ -367,7 +367,7 @@
       ],
       "Metadata": {
         "aws:cdk:path": "cdk-poc-appsync/itemChangedFunction/Resource",
-        "aws:asset:path": "asset.875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a",
+        "aws:asset:path": "asset.e5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183",
         "aws:asset:property": "Code"
       }
     },
@@ -512,17 +512,17 @@
     }
   },
   "Parameters": {
-    "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3Bucket34DDFB22": {
+    "AssetParameterse5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183S3Bucket553E2548": {
       "Type": "String",
-      "Description": "S3 bucket for asset \"875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a\""
+      "Description": "S3 bucket for asset \"e5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183\""
     },
-    "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aS3VersionKey8AE66FF5": {
+    "AssetParameterse5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183S3VersionKey0A546F8F": {
       "Type": "String",
-      "Description": "S3 key for asset version \"875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a\""
+      "Description": "S3 key for asset version \"e5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183\""
     },
-    "AssetParameters875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8aArtifactHash174DFD21": {
+    "AssetParameterse5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183ArtifactHash8055445A": {
       "Type": "String",
-      "Description": "Artifact hash for asset \"875798d084303cc5e3b22d5406c9803adaf00eddd3095333086d8d02e96bbd8a\""
+      "Description": "Artifact hash for asset \"e5e369f03c0c2a1fa5bcfe34d1ce5c38683915ee45a1bb3efbe761c3fd230183\""
     }
   }
 }

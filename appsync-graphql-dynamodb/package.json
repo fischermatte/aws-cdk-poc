@@ -4,6 +4,7 @@
   "description": "Running a GraphQL API with four resolvers to do CRUD operations on DynamoDB",
   "private": true,
   "scripts": {
+    "postinstall": "cd functions && npm i",
     "build": "tsc",
     "watch": "tsc -w",
     "cdk": "cdk",
@@ -30,6 +31,7 @@
     "aws-appsync-auth-link": "2.0.1",
     "aws-sdk": "^2.672.0",
     "graphql": "^15.0.0",
-    "graphql-tag": "^2.10.3"
+    "graphql-tag": "^2.10.3",
+    "node-fetch": "^2.6.0"
   }
 }
