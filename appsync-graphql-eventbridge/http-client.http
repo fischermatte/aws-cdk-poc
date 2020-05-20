@@ -1,0 +1,13 @@
+###
+
+POST {{apiurl}}
+Content-Type: application/graphq
+x-api-key: {{apikey}}
+
+{
+  "query": "mutation { putEvent(event: \"huhu\") { result } }"
+}
+
+###
+
+

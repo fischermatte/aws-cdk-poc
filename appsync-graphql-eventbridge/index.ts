@@ -4,8 +4,13 @@ import targets = require("@aws-cdk/aws-events-targets");
 import {CfnApiKey, CfnDataSource, CfnGraphQLApi, CfnGraphQLSchema, CfnResolver} from "@aws-cdk/aws-appsync";
 import {PolicyStatement, Role, ServicePrincipal} from "@aws-cdk/aws-iam";
 import {Rule} from "@aws-cdk/aws-events";
-import {Tag} from '@aws-cdk/core';
+import {Duration, Tag} from '@aws-cdk/core';
 import {CfnRegistry, CfnSchema} from '@aws-cdk/aws-eventschemas';
+import {AssetCode} from "@aws-cdk/aws-lambda";
+import {Topic, CfnSubscription} from "@aws-cdk/aws-sns";
+import {CfnTopic} from "@aws-cdk/aws-sns/lib/sns.generated";
+import {SqsQueue} from "@aws-cdk/aws-events-targets";
+import {Queue} from '@aws-cdk/aws-sqs';
 
 export class AppSyncCdkStack extends cdk.Stack {
     constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -96,7 +101,7 @@ export class AppSyncCdkStack extends cdk.Stack {
                }
             ]
           }
-        }a
+        }
       }`,
             responseMappingTemplate: `## Raise a GraphQL field error in case of a datasource invocation error
       #if($ctx.error)
@@ -116,16 +121,13 @@ export class AppSyncCdkStack extends cdk.Stack {
         putEventResolver.addDependsOn(apiSchema);
 
         const echoLambda = new lambda.Function(this, "echoFunction", {
-            code: lambda.Code.fromInline(
-                "exports.handler = (event, context) => { console.log(event); context.succeed(event); }"
-            ),
-            handler: "index.handler",
-            runtime: lambda.Runtime.NODEJS_10_X
-        });
+            code: new AssetCode('functions'),
+            handler: "event-receiver.handler",
+            runtime: lambda.Runtime.NODEJS_10_X,
+            retryAttempts: 5,
 
-        // const eventBus = new EventBus(this, "CdkPocEventBus", {
-        //   eventBusName: "CdkPocEventBus"
-        // });
+
+        });
 
         new CfnRegistry(this, "CdkPocRegistry", {
             registryName: "CdkPocRegistry"
@@ -171,7 +173,26 @@ export class AppSyncCdkStack extends cdk.Stack {
                 source: ["appsync"]
             }
         });
-        rule.addTarget(new targets.LambdaFunction(echoLambda));
+
+        const target = new targets.LambdaFunction(echoLambda);
+        rule.addTarget(target);
+
+        const queue = new Queue(this, 'DomainEventQueue', {
+            visibilityTimeout: Duration.seconds(30) ,
+            receiveMessageWaitTime: Duration.seconds(20)
+        })
+
+        const topic  = new CfnTopic(this,'DomainEventTopic', {
+            displayName: "DomainEventTopic",
+            topicName: "DomainEventTopic"
+        })
+
+
+        const subsription = new CfnSubscription(this, "DomainEventSubscription", {
+            topicArn: topic.topicName
+        });
+        // topic.add(subsription)
+
     }
 }
 

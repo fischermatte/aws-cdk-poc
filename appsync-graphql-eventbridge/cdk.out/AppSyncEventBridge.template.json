@@ -152,7 +152,7 @@
         "FieldName": "putEvent",
         "TypeName": "Mutation",
         "DataSourceName": "EventBridgeDataSource",
-        "RequestMappingTemplate": "{\n        \"version\": \"2018-05-29\",\n        \"method\": \"POST\",\n        \"resourcePath\": \"/\",\n        \"params\": {\n          \"headers\": {\n            \"content-type\": \"application/x-amz-json-1.1\",\n            \"x-amz-target\":\"AWSEvents.PutEvents\"\n          },\n          \"body\": {\n            \"Entries\":[ \n              {\n                \"Source\":\"appsync\",\n                \"EventBusName\": \"default\",\n                \"Detail\":\"{ \\\"event\\\": \\\"$ctx.arguments.event\\\"}\",\n                \"DetailType\":\"Event Bridge via GraphQL\"\n               }\n            ]\n          }\n        }a\n      }",
+        "RequestMappingTemplate": "{\n        \"version\": \"2018-05-29\",\n        \"method\": \"POST\",\n        \"resourcePath\": \"/\",\n        \"params\": {\n          \"headers\": {\n            \"content-type\": \"application/x-amz-json-1.1\",\n            \"x-amz-target\":\"AWSEvents.PutEvents\"\n          },\n          \"body\": {\n            \"Entries\":[ \n              {\n                \"Source\":\"appsync\",\n                \"EventBusName\": \"default\",\n                \"Detail\":\"{ \\\"event\\\": \\\"$ctx.arguments.event\\\"}\",\n                \"DetailType\":\"Event Bridge via GraphQL\"\n               }\n            ]\n          }\n        }\n      }",
         "ResponseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n      #if($ctx.error)\n        $util.error($ctx.error.message, $ctx.error.type)\n      #end\n      ## if the response status code is not 200, then return an error. Else return the body **\n      #if($ctx.result.statusCode == 200)\n          ## If response is 200, return the body.\n          {\n            \"result\": \"$util.parseJson($ctx.result.body)\"\n          }\n      #else\n          ## If response is not 200, append the response to error block.\n          $utils.appendError($ctx.result.body, $ctx.result.statusCode)\n      #end"
       },
       "DependsOn": [
@@ -206,9 +206,44 @@
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
-          "ZipFile": "exports.handler = (event, context) => { console.log(event); context.succeed(event); }"
+          "S3Bucket": {
+            "Ref": "AssetParameters91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342S3Bucket8A833856"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342S3VersionKeyCF8886AD"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342S3VersionKeyCF8886AD"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
         },
-        "Handler": "index.handler",
+        "Handler": "event-receiver.handler",
         "Role": {
           "Fn::GetAtt": [
             "echoFunctionServiceRole1EBD6DF0",
@@ -227,7 +262,9 @@
         "echoFunctionServiceRole1EBD6DF0"
       ],
       "Metadata": {
-        "aws:cdk:path": "AppSyncEventBridge/echoFunction/Resource"
+        "aws:cdk:path": "AppSyncEventBridge/echoFunction/Resource",
+        "aws:asset:path": "asset.91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342",
+        "aws:asset:property": "Code"
       }
     },
     "echoFunctionAllowEventRuleAppSyncEventBridgeAppSyncEventBridgeRleC5E99BEDEFA27639": {
@@ -310,6 +347,20 @@
       "Metadata": {
         "aws:cdk:path": "AppSyncEventBridge/AppSyncEventBridgeRle/Resource"
       }
+    }
+  },
+  "Parameters": {
+    "AssetParameters91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342S3Bucket8A833856": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342\""
+    },
+    "AssetParameters91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342S3VersionKeyCF8886AD": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342\""
+    },
+    "AssetParameters91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342ArtifactHash10C3729D": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"91d20022957068bbf1145d961c6af52df601f7ca46fbc167bb5580cafbf01342\""
     }
   }
 }
