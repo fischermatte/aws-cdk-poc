@@ -10,7 +10,7 @@ import {
     VpcLink
 } from "@aws-cdk/aws-apigateway";
 import {NetworkLoadBalancedFargateService} from "@aws-cdk/aws-ecs-patterns";
-import {Cluster, ContainerImage, FargateTaskDefinition} from "@aws-cdk/aws-ecs";
+import {AwsLogDriver, Cluster, ContainerImage, FargateTaskDefinition} from "@aws-cdk/aws-ecs";
 import {Port, Vpc} from "@aws-cdk/aws-ec2";
 
 export class MyStack extends Stack {
@@ -32,6 +32,10 @@ export class MyStack extends Stack {
 
         const container = taskDefinition.addContainer('MyContainer', {
             image: ContainerImage.fromRegistry('vad1mo/hello-world-rest'),
+            logging: new AwsLogDriver({
+                streamPrefix: 'MyContainer'
+            })
+
         });
         container.addPortMappings({
             containerPort: 5050
@@ -63,25 +67,30 @@ export class MyStack extends Stack {
                 vpcLink: new VpcLink(this, 'MyVpcLink', {
                     targets: [service.loadBalancer],
                     vpcLinkName: 'MyVpcLink',
-                })
+                }),
             },
             proxy: true,
         }))
+        this.addCorsOptions(resource);
 
-        // const resource = api.root.addResource('fargate').addResource('{proxy+}');
-        // resource.addMethod("ANY", new HttpIntegration('http://' + service.loadBalancer.loadBalancerDnsName + "/{proxy}", {
+        // api.root.addProxy({
+        //   anyMethod: true,
+        //   defaultIntegration: new HttpIntegration('http://localhost.com:5050/{proxy}', {
         //     httpMethod: 'ANY',
         //     options: {
-        //         connectionType: ConnectionType.VPC_LINK,
-        //         vpcLink: new VpcLink(this, 'MyVpcLink', {
-        //             targets: [service.loadBalancer],
-        //             vpcLinkName: 'MyVpcLink',
-        //         })
+        //       connectionType: ConnectionType.VPC_LINK,
+        //       vpcLink: new VpcLink(this, 'MyVpcLink', {
+        //         targets: [service.loadBalancer],
+        //         vpcLinkName: 'MyVpcLink',
+        //       }),
         //     },
         //     proxy: true,
-        // }))
+        //   }),
+        //   defaultMethodOptions: {
+        //     authorizationType: AuthorizationType.NONE,
+        //   },
+        // });
 
-        this.addCorsOptions(api.root);
     }
 
     private addCorsOptions(apiResource: IResource) {
