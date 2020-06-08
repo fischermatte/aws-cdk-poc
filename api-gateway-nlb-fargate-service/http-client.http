@@ -1,6 +1,6 @@
 ###
 
-GET https://48neb79u24.execute-api.eu-central-1.amazonaws.com/prod/fargate/test/huhu
+GET https://xxx.execute-api.eu-central-1.amazonaws.com/prod/fargate
 
 
 
