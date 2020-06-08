@@ -2,10 +2,7 @@
 /src/*.js
 /api-lambda-dynamo/index.js
 /.idea/
-/cdk.out/
 /**/node_modules/
 *.js
 /**/*.js
-/**/cdk.out/
-!/**/cdk.out/*template.json
 /**/*.env.json
