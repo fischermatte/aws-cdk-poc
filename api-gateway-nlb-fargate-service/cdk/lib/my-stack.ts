@@ -26,11 +26,11 @@ export class MyStack extends Stack {
         const cluster = new Cluster(this, 'MyCluster', {
             vpc: vpc,
         });
-        cluster.connections.allowFromAnyIpv4(Port.tcp(80));
+        cluster.connections.allowFromAnyIpv4(Port.allTraffic());
 
-        const taskDefinition = new FargateTaskDefinition(this, 'MyTaskDefinition');
+        const taskDefinition = new FargateTaskDefinition(this, 'MyTaskDefinition2');
 
-        const container = taskDefinition.addContainer('MyContainer', {
+        const container = taskDefinition.addContainer('MyContainer2', {
             image: ContainerImage.fromRegistry('vad1mo/hello-world-rest'),
             logging: new AwsLogDriver({
                 streamPrefix: 'MyContainer'
@@ -38,16 +38,17 @@ export class MyStack extends Stack {
 
         });
         container.addPortMappings({
-            containerPort: 5050
+            containerPort: 5050,
+            hostPort: 5050
         });
 
-        const service = new NetworkLoadBalancedFargateService(this, 'MyFargateServie', {
+        const service = new NetworkLoadBalancedFargateService(this, 'MyFargateService2', {
             cluster,
             taskDefinition,
             publicLoadBalancer: false,
         });
 
-        service.service.connections.allowFromAnyIpv4(Port.tcp(80));
+        service.service.connections.allowFromAnyIpv4(Port.allTraffic());
 
         return service;
     }
