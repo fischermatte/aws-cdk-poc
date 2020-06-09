@@ -26,11 +26,10 @@ export class MyStack extends Stack {
         const cluster = new Cluster(this, 'MyCluster', {
             vpc: vpc,
         });
-        cluster.connections.allowFromAnyIpv4(Port.allTraffic());
 
-        const taskDefinition = new FargateTaskDefinition(this, 'MyTaskDefinition2');
+        const taskDefinition = new FargateTaskDefinition(this, 'MyTaskDefinition');
 
-        const container = taskDefinition.addContainer('MyContainer2', {
+        const container = taskDefinition.addContainer('MyContainer', {
             image: ContainerImage.fromRegistry('vad1mo/hello-world-rest'),
             logging: new AwsLogDriver({
                 streamPrefix: 'MyContainer'
@@ -42,7 +41,7 @@ export class MyStack extends Stack {
             hostPort: 5050
         });
 
-        const service = new NetworkLoadBalancedFargateService(this, 'MyFargateService2', {
+        const service = new NetworkLoadBalancedFargateService(this, 'MyFargateService', {
             cluster,
             taskDefinition,
             publicLoadBalancer: false,
@@ -60,37 +59,20 @@ export class MyStack extends Stack {
                 loggingLevel: MethodLoggingLevel.INFO,
             },
         });
-        const resource = api.root.addResource('fargate');
-        resource.addMethod("ANY", new HttpIntegration('http://' + service.loadBalancer.loadBalancerDnsName, {
+        const resource = api.root.addResource('server').addResource('graphql');
+        resource.addMethod("ANY", new HttpIntegration(
+            'http://' + service.loadBalancer.loadBalancerDnsName + '/graphql',
+            {
             httpMethod: 'ANY',
             options: {
                 connectionType: ConnectionType.VPC_LINK,
                 vpcLink: new VpcLink(this, 'MyVpcLink', {
                     targets: [service.loadBalancer],
                     vpcLinkName: 'MyVpcLink',
-                }),
+                })
             },
-            proxy: true,
         }))
         this.addCorsOptions(resource);
-
-        // api.root.addProxy({
-        //   anyMethod: true,
-        //   defaultIntegration: new HttpIntegration('http://localhost.com:5050/{proxy}', {
-        //     httpMethod: 'ANY',
-        //     options: {
-        //       connectionType: ConnectionType.VPC_LINK,
-        //       vpcLink: new VpcLink(this, 'MyVpcLink', {
-        //         targets: [service.loadBalancer],
-        //         vpcLinkName: 'MyVpcLink',
-        //       }),
-        //     },
-        //     proxy: true,
-        //   }),
-        //   defaultMethodOptions: {
-        //     authorizationType: AuthorizationType.NONE,
-        //   },
-        // });
 
     }
 

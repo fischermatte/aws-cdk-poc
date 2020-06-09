@@ -458,7 +458,7 @@
         "aws:cdk:path": "MyStack/MyCluster/Resource"
       }
     },
-    "MyTaskDefinition2TaskRoleD9FBE620": {
+    "MyTaskDefinitionTaskRole93FBB305": {
       "Type": "AWS::IAM::Role",
       "Properties": {
         "AssumeRolePolicyDocument": {
@@ -475,10 +475,10 @@
         }
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyTaskDefinition2/TaskRole/Resource"
+        "aws:cdk:path": "MyStack/MyTaskDefinition/TaskRole/Resource"
       }
     },
-    "MyTaskDefinition2E721A6BC": {
+    "MyTaskDefinitionF5B350B4": {
       "Type": "AWS::ECS::TaskDefinition",
       "Properties": {
         "ContainerDefinitions": [
@@ -489,7 +489,7 @@
               "LogDriver": "awslogs",
               "Options": {
                 "awslogs-group": {
-                  "Ref": "MyTaskDefinition2MyContainer2LogGroup20EC2F9B"
+                  "Ref": "MyTaskDefinitionMyContainerLogGroupEA37043B"
                 },
                 "awslogs-stream-prefix": "MyContainer",
                 "awslogs-region": {
@@ -497,7 +497,7 @@
                 }
               }
             },
-            "Name": "MyContainer2",
+            "Name": "MyContainer",
             "PortMappings": [
               {
                 "ContainerPort": 5050,
@@ -510,11 +510,11 @@
         "Cpu": "256",
         "ExecutionRoleArn": {
           "Fn::GetAtt": [
-            "MyTaskDefinition2ExecutionRole4CC9ADEC",
+            "MyTaskDefinitionExecutionRole3D88C23D",
             "Arn"
           ]
         },
-        "Family": "MyStackMyTaskDefinition25C465C4D",
+        "Family": "MyStackMyTaskDefinitionF3009299",
         "Memory": "512",
         "NetworkMode": "awsvpc",
         "RequiresCompatibilities": [
@@ -522,24 +522,24 @@
         ],
         "TaskRoleArn": {
           "Fn::GetAtt": [
-            "MyTaskDefinition2TaskRoleD9FBE620",
+            "MyTaskDefinitionTaskRole93FBB305",
             "Arn"
           ]
         }
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyTaskDefinition2/Resource"
+        "aws:cdk:path": "MyStack/MyTaskDefinition/Resource"
       }
     },
-    "MyTaskDefinition2MyContainer2LogGroup20EC2F9B": {
+    "MyTaskDefinitionMyContainerLogGroupEA37043B": {
       "Type": "AWS::Logs::LogGroup",
       "UpdateReplacePolicy": "Retain",
       "DeletionPolicy": "Retain",
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyTaskDefinition2/MyContainer2/LogGroup/Resource"
+        "aws:cdk:path": "MyStack/MyTaskDefinition/MyContainer/LogGroup/Resource"
       }
     },
-    "MyTaskDefinition2ExecutionRole4CC9ADEC": {
+    "MyTaskDefinitionExecutionRole3D88C23D": {
       "Type": "AWS::IAM::Role",
       "Properties": {
         "AssumeRolePolicyDocument": {
@@ -556,10 +556,10 @@
         }
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyTaskDefinition2/ExecutionRole/Resource"
+        "aws:cdk:path": "MyStack/MyTaskDefinition/ExecutionRole/Resource"
       }
     },
-    "MyTaskDefinition2ExecutionRoleDefaultPolicyFF25C1D0": {
+    "MyTaskDefinitionExecutionRoleDefaultPolicy17975C1F": {
       "Type": "AWS::IAM::Policy",
       "Properties": {
         "PolicyDocument": {
@@ -572,7 +572,7 @@
               "Effect": "Allow",
               "Resource": {
                 "Fn::GetAtt": [
-                  "MyTaskDefinition2MyContainer2LogGroup20EC2F9B",
+                  "MyTaskDefinitionMyContainerLogGroupEA37043B",
                   "Arn"
                 ]
               }
@@ -580,18 +580,18 @@
           ],
           "Version": "2012-10-17"
         },
-        "PolicyName": "MyTaskDefinition2ExecutionRoleDefaultPolicyFF25C1D0",
+        "PolicyName": "MyTaskDefinitionExecutionRoleDefaultPolicy17975C1F",
         "Roles": [
           {
-            "Ref": "MyTaskDefinition2ExecutionRole4CC9ADEC"
+            "Ref": "MyTaskDefinitionExecutionRole3D88C23D"
           }
         ]
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyTaskDefinition2/ExecutionRole/DefaultPolicy/Resource"
+        "aws:cdk:path": "MyStack/MyTaskDefinition/ExecutionRole/DefaultPolicy/Resource"
       }
     },
-    "MyFargateService2LB09A6A657": {
+    "MyFargateServiceLBDE830E97": {
       "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
       "Properties": {
         "Scheme": "internal",
@@ -606,31 +606,31 @@
         "Type": "network"
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyFargateService2/LB/Resource"
+        "aws:cdk:path": "MyStack/MyFargateService/LB/Resource"
       }
     },
-    "MyFargateService2LBPublicListener5D034FCA": {
+    "MyFargateServiceLBPublicListener61A1042F": {
       "Type": "AWS::ElasticLoadBalancingV2::Listener",
       "Properties": {
         "DefaultActions": [
           {
             "TargetGroupArn": {
-              "Ref": "MyFargateService2LBPublicListenerECSGroup24DF5D7F"
+              "Ref": "MyFargateServiceLBPublicListenerECSGroup4A3EDF05"
             },
             "Type": "forward"
           }
         ],
         "LoadBalancerArn": {
-          "Ref": "MyFargateService2LB09A6A657"
+          "Ref": "MyFargateServiceLBDE830E97"
         },
         "Port": 80,
         "Protocol": "TCP"
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyFargateService2/LB/PublicListener/Resource"
+        "aws:cdk:path": "MyStack/MyFargateService/LB/PublicListener/Resource"
       }
     },
-    "MyFargateService2LBPublicListenerECSGroup24DF5D7F": {
+    "MyFargateServiceLBPublicListenerECSGroup4A3EDF05": {
       "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
       "Properties": {
         "Port": 80,
@@ -641,10 +641,10 @@
         }
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyFargateService2/LB/PublicListener/ECSGroup/Resource"
+        "aws:cdk:path": "MyStack/MyFargateService/LB/PublicListener/ECSGroup/Resource"
       }
     },
-    "MyFargateService2Service9DF07591": {
+    "MyFargateServiceF490C034": {
       "Type": "AWS::ECS::Service",
       "Properties": {
         "Cluster": {
@@ -660,10 +660,10 @@
         "LaunchType": "FARGATE",
         "LoadBalancers": [
           {
-            "ContainerName": "MyContainer2",
+            "ContainerName": "MyContainer",
             "ContainerPort": 5050,
             "TargetGroupArn": {
-              "Ref": "MyFargateService2LBPublicListenerECSGroup24DF5D7F"
+              "Ref": "MyFargateServiceLBPublicListenerECSGroup4A3EDF05"
             }
           }
         ],
@@ -673,7 +673,7 @@
             "SecurityGroups": [
               {
                 "Fn::GetAtt": [
-                  "MyFargateService2ServiceSecurityGroupEF9D39A7",
+                  "MyFargateServiceSecurityGroup7016792A",
                   "GroupId"
                 ]
               }
@@ -689,21 +689,21 @@
           }
         },
         "TaskDefinition": {
-          "Ref": "MyTaskDefinition2E721A6BC"
+          "Ref": "MyTaskDefinitionF5B350B4"
         }
       },
       "DependsOn": [
-        "MyFargateService2LBPublicListenerECSGroup24DF5D7F",
-        "MyFargateService2LBPublicListener5D034FCA"
+        "MyFargateServiceLBPublicListenerECSGroup4A3EDF05",
+        "MyFargateServiceLBPublicListener61A1042F"
       ],
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyFargateService2/Service/Service"
+        "aws:cdk:path": "MyStack/MyFargateService/Service/Service"
       }
     },
-    "MyFargateService2ServiceSecurityGroupEF9D39A7": {
+    "MyFargateServiceSecurityGroup7016792A": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
-        "GroupDescription": "MyStack/MyFargateService2/Service/SecurityGroup",
+        "GroupDescription": "MyStack/MyFargateService/Service/SecurityGroup",
         "SecurityGroupEgress": [
           {
             "CidrIp": "0.0.0.0/0",
@@ -723,7 +723,7 @@
         }
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyFargateService2/Service/SecurityGroup/Resource"
+        "aws:cdk:path": "MyStack/MyFargateService/Service/SecurityGroup/Resource"
       }
     },
     "MyApi49610EDF": {
@@ -786,7 +786,7 @@
         "aws:cdk:path": "MyStack/MyApi/Account"
       }
     },
-    "MyApiDeploymentECB0D05E37c20ec83e2bf826422e5a67b883fd00": {
+    "MyApiDeploymentECB0D05E622c15eb011af47a9760e3934adee465": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -795,9 +795,10 @@
         "Description": "Automatically created by the RestApi construct"
       },
       "DependsOn": [
-        "MyApifargateANY19E0A4D2",
-        "MyApifargateOPTIONS5D03215D",
-        "MyApifargate7EA660D2"
+        "MyApiservergraphqlANY7ADC0FA5",
+        "MyApiservergraphqlOPTIONSD71AF21D",
+        "MyApiservergraphqlB2089AB5",
+        "MyApiserver0C7C4808"
       ],
       "Metadata": {
         "aws:cdk:path": "MyStack/MyApi/Deployment/Resource"
@@ -810,7 +811,7 @@
           "Ref": "MyApi49610EDF"
         },
         "DeploymentId": {
-          "Ref": "MyApiDeploymentECB0D05E37c20ec83e2bf826422e5a67b883fd00"
+          "Ref": "MyApiDeploymentECB0D05E622c15eb011af47a9760e3934adee465"
         },
         "MethodSettings": [
           {
@@ -825,7 +826,7 @@
         "aws:cdk:path": "MyStack/MyApi/DeploymentStage.prod/Resource"
       }
     },
-    "MyApifargate7EA660D2": {
+    "MyApiserver0C7C4808": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
@@ -834,21 +835,36 @@
             "RootResourceId"
           ]
         },
-        "PathPart": "fargate",
+        "PathPart": "server",
         "RestApiId": {
           "Ref": "MyApi49610EDF"
         }
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyApi/Default/fargate/Resource"
+        "aws:cdk:path": "MyStack/MyApi/Default/server/Resource"
       }
     },
-    "MyApifargateANY19E0A4D2": {
+    "MyApiservergraphqlB2089AB5": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "MyApiserver0C7C4808"
+        },
+        "PathPart": "graphql",
+        "RestApiId": {
+          "Ref": "MyApi49610EDF"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "MyStack/MyApi/Default/server/graphql/Resource"
+      }
+    },
+    "MyApiservergraphqlANY7ADC0FA5": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "ANY",
         "ResourceId": {
-          "Ref": "MyApifargate7EA660D2"
+          "Ref": "MyApiservergraphqlB2089AB5"
         },
         "RestApiId": {
           "Ref": "MyApi49610EDF"
@@ -868,25 +884,26 @@
                 "http://",
                 {
                   "Fn::GetAtt": [
-                    "MyFargateService2LB09A6A657",
+                    "MyFargateServiceLBDE830E97",
                     "DNSName"
                   ]
-                }
+                },
+                "/graphql"
               ]
             ]
           }
         }
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyApi/Default/fargate/ANY/Resource"
+        "aws:cdk:path": "MyStack/MyApi/Default/server/graphql/ANY/Resource"
       }
     },
-    "MyApifargateOPTIONS5D03215D": {
+    "MyApiservergraphqlOPTIONSD71AF21D": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "OPTIONS",
         "ResourceId": {
-          "Ref": "MyApifargate7EA660D2"
+          "Ref": "MyApiservergraphqlB2089AB5"
         },
         "RestApiId": {
           "Ref": "MyApi49610EDF"
@@ -923,7 +940,7 @@
         ]
       },
       "Metadata": {
-        "aws:cdk:path": "MyStack/MyApi/Default/fargate/OPTIONS/Resource"
+        "aws:cdk:path": "MyStack/MyApi/Default/server/graphql/OPTIONS/Resource"
       }
     },
     "MyVpcLink8ECB821F": {
@@ -932,7 +949,7 @@
         "Name": "MyVpcLink",
         "TargetArns": [
           {
-            "Ref": "MyFargateService2LB09A6A657"
+            "Ref": "MyFargateServiceLBDE830E97"
           }
         ]
       },
@@ -942,10 +959,10 @@
     }
   },
   "Outputs": {
-    "MyFargateService2LoadBalancerDNS0DCDFFAB": {
+    "MyFargateServiceLoadBalancerDNS704F6391": {
       "Value": {
         "Fn::GetAtt": [
-          "MyFargateService2LB09A6A657",
+          "MyFargateServiceLBDE830E97",
           "DNSName"
         ]
       }

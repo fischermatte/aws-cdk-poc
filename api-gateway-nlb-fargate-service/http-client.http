@@ -1,6 +1,6 @@
 ###
 
-GET  https://lehbf251u1.execute-api.eu-central-1.amazonaws.com/prod/fargate
+GET  https://xxx.execute-api.eu-central-1.amazonaws.com/prod/server/graphql
 
 
 
